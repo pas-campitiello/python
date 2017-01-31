@@ -12,14 +12,14 @@ After some readings about Python usage
 * https://hynek.me/articles/python3-2016/
 * http://ianozsvald.com/2016/06/20/results-for-which-version-of-python-2vs3-do-london-data-scientists-use/
 
-# How to install Python 2.7 and 3.5/6 on Ubuntu
+## How to install Python 2.7 and 3.5/6 on Ubuntu
 
-# How to execute Python code
+## How to execute Python code
 
-# Editor and compilers to install
+## Editor and compilers to install
 
 
-# Editor and compilers online 
+## Editor and compilers online 
 
 * http://ideone.com/zxD86p
 
