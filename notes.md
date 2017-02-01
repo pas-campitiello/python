@@ -21,8 +21,11 @@ Better Python 2+ or 3+, it depends on several factor, but currently (2017) these
 - if you are going to start a fresh new project using old libraries, pay attention because they could support only Python 2+, hence alternatively
   - you can use Python 2+
   - you can try use Python 3+ and cope with possible backward compatibility 
-- if you will deploy your code in an environment supporting only Python 2+, then use Python 2+ (it can be tricky to cope with backward compatibility)
+- if you will deploy your code in an environment supporting only Python 2+, then use Python 2+ 
+  - in case you decide to use Python 3+, it can be tricky to cope with backward compatibility
 - in all the other cases use Python 2+
+
+I'm in the first condition, beginner, new learned, then I will use Python 3.6.
 
 ## How to install Python 2.7 and 3.5/6 on Ubuntu
 Versions preinstalled
