@@ -29,7 +29,6 @@ Python 3.6 - December 23, 2016
 Old releases and dates are listed here: https://www.python.org/download/releases/  
 New releases and dates are listed here: https://www.python.org/downloads/
 
-
 ## Python 2+ or Python 3+?
 
 Arguably, Python became famous starting from the version 2.0.  
@@ -58,6 +57,14 @@ Python 3+ is the future for sure, but currently (Feb 2017) these seem to be the 
 - in all the other cases use Python 2+
 
 I'm in the first condition, beginner, new learner, then I will use Python 3.6.
+
+## Main differences between Python 2+ and 3+
+
+Whatever is the version you choose, it's important to know major differences.  
+Some documents about this:
+
+- http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html
+- 
 
 ## How to install Python 2.7 and 3.5/6 on Ubuntu
 Versions preinstalled
