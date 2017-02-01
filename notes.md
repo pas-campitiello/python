@@ -15,8 +15,7 @@ After some readings online about Python usage, especially
 
 my feeling is that there is not a precise answer to the question, yet.
 
-Better Python 2+ or 3+, it depends mainly on dependencies with old codebases / libraries,
-
+Better Python 2+ or 3+, it depends mainly on dependencies with old codebases / libraries,  
 or deployment environments supporting only old versions of the language.
 
 Python 3+ is the future for sure, but currently (Feb 2017) these seem to be the general rules:
