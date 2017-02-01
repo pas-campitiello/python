@@ -14,6 +14,7 @@ After some readings online about Python usage, especially
 * http://ianozsvald.com/2016/06/20/results-for-which-version-of-python-2vs3-do-london-data-scientists-use/
 
 my feeling is that there is not a precise answer to the question.
+
 Better Python 2+ or 3+, it depends on several factor, but currently (2017) these are the general rules:
 
 - if you are a beginner, learning Python at school or by yourself, then use Python 3+
