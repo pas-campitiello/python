@@ -22,6 +22,8 @@ the feeling is that there is not a precise answer to the question, but currently
 - if you want to deploy your code in a environment supporting only Python 2+, then use Python 2+
 
 ## How to install Python 2.7 and 3.5/6 on Ubuntu
+Versions preinstalled
+How to select between versions
 
 ## How to execute Python code
 
