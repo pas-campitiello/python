@@ -22,11 +22,11 @@ Python 3+ is the future for sure, but currently (Feb 2017) these seem to be the 
 
 - if you are a beginner, learning Python at school or by yourself, then use Python 3+
 - if you are going to start a fresh new project with the latest technologies, then use Python 3+
-- if you are going to start a fresh new project using old libraries, pay attention because they could support only Python 2+, hence alternatively
+- if you are going to start a fresh new project using old libraries supporting only Python 2+, hence alternatively
   - you can use Python 2+
   - you can try use Python 3+ and cope with possible backward compatibility 
 - if you will deploy your code in an environment supporting only Python 2+, then use Python 2+ 
-  - in case you decide to use Python 3+, it can be tricky to cope with backward compatibility
+  - in case you decide to use Python 3+, it can be tricky to cope with backward compatibility, but not impossible
 - in all the other cases use Python 2+
 
 I'm in the first condition, beginner, new learner, then I will use Python 3.6.
