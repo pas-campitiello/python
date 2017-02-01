@@ -36,10 +36,10 @@ But which is the most important version to use or to start with?
 
 After some readings online about Python usage, especially 
 
-* https://wiki.python.org/moin/Python2orPython3
-* https://www.quora.com/Is-it-better-to-use-Python-2-or-3-in-2016
-* https://hynek.me/articles/python3-2016/
-* http://ianozsvald.com/2016/06/20/results-for-which-version-of-python-2vs3-do-london-data-scientists-use/
+- https://wiki.python.org/moin/Python2orPython3
+- https://www.quora.com/Is-it-better-to-use-Python-2-or-3-in-2016
+- https://hynek.me/articles/python3-2016/
+- http://ianozsvald.com/2016/06/20/results-for-which-version-of-python-2vs3-do-london-data-scientists-use/
 
 my feeling is that there is not a precise answer to the question, yet.  
 It depends mainly on dependencies with old codebases / libraries,  
@@ -61,10 +61,11 @@ I'm in the first condition, beginner, new learner, then I will use Python 3.6.
 ## Main differences between Python 2+ and 3+
 
 Whatever is the version you choose, it's important to know major differences.  
-Some documents about this:
+Some useful links about this topic:
 
+- https://docs.python.org/3/whatsnew/3.0.html
+- https://docs.python.org/3/whatsnew/3.6.html
 - http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html
-- 
 
 ## How to install Python 2.7 and 3.5/6 on Ubuntu
 Versions preinstalled
