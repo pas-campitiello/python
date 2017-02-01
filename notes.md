@@ -16,7 +16,7 @@ After some readings online about Python usage, especially
 my feeling is that there is not a precise answer to the question.
 Better Python 2+ or 3+, it depends on several factor, but currently (2017) these are the general rules:
 
-- if you are a beginner learning Python, then use Python 3+
+- if you are a beginner, learning Python at school or by yourself, then use Python 3+
 - if you are going to start a fresh new project with the latest technologies, then use Python 3+
 - if you are going to start a fresh new project using old libraries, pay attention because they could support only Python 2+, hence alternatively
   - you can use Python 2+
@@ -25,7 +25,7 @@ Better Python 2+ or 3+, it depends on several factor, but currently (2017) these
   - in case you decide to use Python 3+, it can be tricky to cope with backward compatibility
 - in all the other cases use Python 2+
 
-I'm in the first condition, beginner, new learned, then I will use Python 3.6.
+I'm in the first condition, beginner, new learner, then I will use Python 3.6.
 
 ## How to install Python 2.7 and 3.5/6 on Ubuntu
 Versions preinstalled
