@@ -31,9 +31,7 @@ New releases and dates are listed here: https://www.python.org/downloads/
 
 ## Python 2+ or Python 3+?
 
-Arguably, Python became famous starting from the version 2.0.  
-But which is the most important version to use or to start with?
-
+Which is the most important version to use or to start with?  
 After some readings online about Python usage, especially 
 
 - https://wiki.python.org/moin/Python2orPython3
