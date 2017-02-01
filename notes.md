@@ -15,7 +15,7 @@ After some readings online about Python usage, especially
 
 my feeling is that there is not a precise answer to the question.
 
-Better Python 2+ or 3+, it depends on several factor, but currently (2017) these are the general rules:
+Better Python 2+ or 3+, it depends on several factor, but currently (Feb 2017) these are the general rules:
 
 - if you are a beginner, learning Python at school or by yourself, then use Python 3+
 - if you are going to start a fresh new project with the latest technologies, then use Python 3+
