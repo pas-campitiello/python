@@ -8,6 +8,7 @@
 
 After some readings online about Python usage, especially 
 
+* https://wiki.python.org/moin/Python2orPython3
 * https://www.quora.com/Is-it-better-to-use-Python-2-or-3-in-2016
 * https://hynek.me/articles/python3-2016/
 * http://ianozsvald.com/2016/06/20/results-for-which-version-of-python-2vs3-do-london-data-scientists-use/
