@@ -13,14 +13,16 @@ After some readings online about Python usage, especially
 * https://hynek.me/articles/python3-2016/
 * http://ianozsvald.com/2016/06/20/results-for-which-version-of-python-2vs3-do-london-data-scientists-use/
 
-the feeling is that there is not a precise answer to the question, but currently these are the general rules:
+my feeling is that there is not a precise answer to the question.
+Better Python 2+ or 3+, it depends on several factor, but currently (2017) these are the general rules:
 
 - if you are a beginner learning Python, then use Python 3+
 - if you are going to start a fresh new project with the latest technologies, then use Python 3+
 - if you are going to start a fresh new project using old libraries, pay attention because they could support only Python 2+, hence alternatively
   - you can use Python 2+
-  - you can try use Python 3+ and cope with possible backward compatibility
-- if you want to deploy your code in a environment supporting only Python 2+, then use Python 2+
+  - you can try use Python 3+ and cope with possible backward compatibility 
+- if you will deploy your code in an environment supporting only Python 2+, then use Python 2+ (it can be tricky to cope with backward compatibility)
+- in all the other cases use Python 2+
 
 ## How to install Python 2.7 and 3.5/6 on Ubuntu
 Versions preinstalled
