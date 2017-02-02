@@ -69,7 +69,7 @@ Some useful links about this topic:
 Versions preinstalled
 How to select between versions
 
-## How to execute Python code
+## How to execute Python code from command line
 
 ## Editor and compilers to install
 
