@@ -1,1 +1,3 @@
-# python
+# Notes about Python
+
+
