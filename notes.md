@@ -84,7 +84,8 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ## How to execute Python code from command line
 
-Method 1) Using the Python interpreter, type each line of code one by one, or on one single line separated by ";" and press Enter.
+Method 1) Using the Python interpreter: 
+type each line of code one by one, or on one single line separated by ";" and press Enter.
 
 Method 2) Creating a file .py, for example Tests.py, and running it through the command line with: python Tests.py 
 
