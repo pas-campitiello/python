@@ -1,5 +1,6 @@
 
-# Notes on Simple Programs - https://wiki.python.org/moin/SimplePrograms
+# Notes on Simple Programs  
+https://wiki.python.org/moin/SimplePrograms
 
 ## 2 lines: Input, assignment 
 
