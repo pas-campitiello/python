@@ -70,12 +70,12 @@ Some useful links about this topic:
 In Ubuntu 17.04, Python 2.7.13 and Python 3.5.3 are already pre-installed
 
 ~~~~
-pasq@pas:~/$ python
+pas@pas:~/$ python
 Python 2.7.13 (default, Jan 19 2017, 14:48:08) 
 [GCC 6.3.0 20170118] on linux2
 Type "help", "copyright", "credits" or "license" for more information.
 >>> quit()
-pasq@pas:~/$ python3
+pas@pas:~/$ python3
 Python 3.5.3 (default, Jan 19 2017, 14:11:04) 
 [GCC 6.3.0 20170118] on linux
 Type "help", "copyright", "credits" or "license" for more information.
