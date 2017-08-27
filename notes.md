@@ -67,7 +67,7 @@ Some useful links about this topic:
 
 ## How to install Python 2.* and 3.* on Ubuntu
 
-In Ubuntu 17.04 Python 2.7.13 and Python 3.5.3 are already pre-installed
+In Ubuntu 17.04, Python 2.7.13 and Python 3.5.3 are already pre-installed
 
 ~~~~
 pasq@pas:~/$ python
@@ -85,6 +85,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 ## How to execute Python code from command line
 
 Method 1) Using the Python interpreter: 
+
 type each line of code one by one, or on one single line separated by ";" and press Enter.
 
 Method 2) Creating a file .py, for example Tests.py, and running it through the command line with: python Tests.py 
