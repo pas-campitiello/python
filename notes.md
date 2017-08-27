@@ -87,7 +87,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 Method 1) Using the Python interpreter:  
 type each line of code one by one, or on one single line separated by ";" and press Enter.
 
-Method 2) Creating a file .py, for example Tests.py, and running it through the command line with: python Tests.py 
+Method 2) Creating a file .py, for example Tests.py, and running it through the command line with: 
+~~~~
+python Tests.py 
+~~~~
 
 Method 3) Using a [Python IDE](https://www.google.com.au/search?q=python+ide) or an [online IDE](https://www.google.com.au/search?q=python+online+ide).
 
