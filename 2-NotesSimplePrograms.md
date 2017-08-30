@@ -1,5 +1,5 @@
 
-# Notes on Simple Programs  
+# Notes on Simple Programs (Python 2.x)
 https://wiki.python.org/moin/SimplePrograms
 
 ## 2 lines: Input, assignment 
@@ -16,13 +16,33 @@ name = input('What is your name?\n')
 print('Hi, %s.' % name)
 ~~~~
 
-## 3 lines: For loop, built-in enumerate function, new style formatting 
-
-## 4 lines: Fibonacci, tuple assignment 
-
-## 5 lines: Functions 
-
 ## 6 lines: Import, regular expressions 
+
+Python re library for regular expression operations: https://docs.python.org/2/library/re.html
+
+r'^\d{3}-\d{4}$'
+
+r
+Indicates Python’s raw string notation (in this case if it is removed there are no effects).
+
+See here: https://stackoverflow.com/questions/21104476/what-does-the-r-in-pythons-re-compiler-pattern-flags-mean
+
+Normal strings use the backslash character as an escape character for special characters (like newlines):
+~~~~
+>>> print 'this is \n a test'
+this is 
+ a test
+~~~~
+
+The r prefix tells the interpreter not to do this:
+~~~~
+>>> print r'this is \n a test'
+this is \n a test
+~~~~
+
+'$'
+Matches the end of the string or just before the newline at the end of the string, and in MULTILINE mode also matches before a newline.
+
 
 ## 7 lines: Dictionaries, generator expressions  
 
