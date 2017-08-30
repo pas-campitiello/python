@@ -20,9 +20,11 @@ print('Hi, %s.' % name)
 
 Python re library for regular expression operations: https://docs.python.org/2/library/re.html
 
+~~~~
 r'^\d{3}-\d{4}$'
+~~~~
 
-r
+*r*  
 Indicates Python’s raw string notation (in this case if it is removed there are no effects).
 
 See here: https://stackoverflow.com/questions/21104476/what-does-the-r-in-pythons-re-compiler-pattern-flags-mean
@@ -40,7 +42,7 @@ The r prefix tells the interpreter not to do this:
 this is \n a test
 ~~~~
 
-'$'
+*$*  
 Matches the end of the string or just before the newline at the end of the string, and in MULTILINE mode also matches before a newline.
 
 
