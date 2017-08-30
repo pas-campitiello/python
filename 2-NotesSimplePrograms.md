@@ -24,7 +24,7 @@ Python re library for regular expression operations: https://docs.python.org/2/l
 r'^\d{3}-\d{4}$'
 ~~~~
 
-**r**
+**r**  
 Indicates Python’s raw string notation (in this case if it is removed there are no effects).
 
 See here: https://stackoverflow.com/questions/21104476/what-does-the-r-in-pythons-re-compiler-pattern-flags-mean
