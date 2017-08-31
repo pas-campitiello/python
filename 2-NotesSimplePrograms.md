@@ -115,10 +115,94 @@ if __name__ == '__main__':
 
 ## 14 lines: Doctest-based testing 
 
+For Python 3 just use // for integer division because list indices must be integers or slices, not float.  
+How does doctest work?  
+https://docs.python.org/2/library/doctest.html?highlight=doctest#how-are-docstring-examples-recognized
 
 
 ## 15 lines: itertools 
 
+For Python 3 just add parenthesis where needed in the print functions.
+
+General link: https://stackoverflow.com/questions/20986463/multi-variable-for-loops-python
+
+**str.splitlines()** - http://python-reference.readthedocs.io/en/latest/docs/str/splitlines.html  
+Returns a list of the lines in the string, breaking at line boundaries.
+
+**for statement**  
+Tutorial control flow: https://docs.python.org/2/tutorial/controlflow.html#for-statements  
+Reference: https://docs.python.org/2/reference/compound_stmts.html#for  
+
+~~~~
+# Given a matrix or a map, you can cycle through it by lines (using only 1 index) 
+# or by columns (using a number of indexes equal to the number of columns per row)
+
+list1 = [('a', 'b', 123), ('d', 'e', 234), ('d', 'e', 234)]
+list2 = [('z', 'w', 999), ('y', 'h', 666)]
+
+for i in list1:
+   print i
+print
+
+for i in list2:
+   print i
+print
+
+#for i,j in list1:
+#    print i,',', j
+#print
+
+#for i,j in list2:
+#    print i,',', j
+#print
+
+for i,j,k in list1:
+    print i,',', j,',', k
+print
+
+for i,j,k in list2:
+    print i,',', j,',', k
+print
+~~~~
+
+**bool([x])** - https://docs.python.org/2/library/functions.html#bool  
+If there is an argument x, then it is converted using the standard truth testing procedure. If x is false or omitted, this returns False; otherwise it returns True. Without arguments it returns False:
+ bool('') = False  
+ bool('fasda') = True
+
+**itertools.groupby** - https://docs.python.org/2/library/itertools.html#itertools.groupby  
+The operation of groupby() is similar to the uniq filter in Unix. It generates a break or new group every time the value of the key function changes (which is why it is usually necessary to have sorted the data using the same key function). That behavior differs from SQL’s GROUP BY which aggregates common elements regardless of their input order.
+
+This line:
+~~~~
+for has_chars, frags in groupby(lines, bool):
+~~~~
+means: apply bool() to the each element of the list lines and generate a new iterable group, basically another list (key = what is returned by bool, value = group) every time bool() changes. Run a for loop on the list of groups created and use the variables *has_chars* and *frags* to refer to the current key and current value.
+
+The output is more comprehensible if you run this:
+~~~~
+from itertools import groupby
+lines = '''
+This is the
+first paragraph.
+
+This is the second.
+'''.splitlines()
+
+print lines
+print
+for i in groupby(lines, bool):
+   print i
+print
+# Use itertools.groupby and bool to return groups of
+# consecutive lines that either have content or don't.
+for has_chars, frags in groupby(lines, bool):
+    if has_chars:
+        print ' '.join(frags)
+# PRINTS:
+# This is the first paragraph.
+# This is the second.
+~~~~  
 
 
 ## 16 lines: csv module, tuple unpacking, cmp() built-in 
