@@ -2,6 +2,7 @@
 # Notes on Simple Programs (Python 2.x)
 https://wiki.python.org/moin/SimplePrograms
 
+
 ## 2 lines: Input, assignment 
 
 Python 2:
@@ -15,6 +16,7 @@ Python 3:
 name = input('What is your name?\n')
 print('Hi, %s.' % name)
 ~~~~
+
 
 ## 6 lines: Import, regular expressions 
 
@@ -46,32 +48,62 @@ this is \n a test
 Matches the end of the string or just before the newline at the end of the string, and in MULTILINE mode also matches before a newline.
 
 
-## 7 lines: Dictionaries, generator expressions  
-
-## 8 lines: Command line arguments, exception handling 
-
 ## 9 lines: Opening files 
 
-## 10 lines: Time, conditionals, from..import, for..else 
+glob.glob(pathname) - https://docs.python.org/2/library/glob.html
+Return a possibly-empty list of path names that match pathname, which must be a string containing a path specification. pathname can be either absolute (like /usr/src/Python-1.5/Makefile) or relative (like ../../Tools/*/*.gif), and can contain shell-style wildcards. Broken symlinks are included in the results (as in the shell).
+
+str. rstrip([chars]) - https://docs.python.org/2/library/stdtypes.html?highlight=rstrip#str.rstrip
+Return a copy of the string with trailing characters removed. The chars argument is a string specifying the set of characters to be removed. If omitted or None, the chars argument defaults to removing whitespace. The chars argument is not a suffix; rather, all combinations of its values are stripped:
+
+~~~~
+>>> '   spacious   '.rstrip()
+'   spacious'
+>>> 'mississippi'.rstrip('ipz')
+'mississ'
+~~~~
+
 
 ## 11 lines: Triple-quoted strings, while loop 
 
+
+
 ## 12 lines: Classes 
+
+
 
 ## 13 lines: Unit testing with unittest 
 
+
+
 ## 14 lines: Doctest-based testing 
+
+
 
 ## 15 lines: itertools 
 
+
+
 ## 16 lines: csv module, tuple unpacking, cmp() built-in 
+
+
 
 ## 18 lines: 8-Queens Problem (recursion) 
 
+
+
 ## 20 lines: Prime numbers sieve w/fancy generators 
- 
+
+
+
 ## 21 lines: XML/HTML parsing (using Python 2.5 or third-party library) 
+
+
 
 ## 28 lines: 8-Queens Problem (define your own exceptions) 
 
+
+
 ## 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com 
+
+
