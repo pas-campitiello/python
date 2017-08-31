@@ -6,16 +6,16 @@ https://wiki.python.org/moin/SimplePrograms
 ## 2 lines: Input, assignment 
 
 Python 2:
-~~~~
+```python
 name = raw_input('What is your name?\n')
 print 'Hi, %s.' % name
-~~~~
+```
 
 Python 3:
-~~~~
+```python
 name = input('What is your name?\n')
 print('Hi, %s.' % name)
-~~~~
+```
 
 
 ## 6 lines: Import, regular expressions 
@@ -32,17 +32,17 @@ Indicates Python’s raw string notation (in this case if it is removed there ar
 See here: https://stackoverflow.com/questions/21104476/what-does-the-r-in-pythons-re-compiler-pattern-flags-mean
 
 Normal strings use the backslash character as an escape character for special characters (like newlines):
-~~~~
+```bash
 >>> print 'this is \n a test'
 this is 
  a test
-~~~~
+```
 
 The r prefix tells the interpreter not to do this:
-~~~~
+```bash
 >>> print r'this is \n a test'
 this is \n a test
-~~~~
+```
 
 **$**  
 Matches the end of the string or just before the newline at the end of the string, and in MULTILINE mode also matches before a newline.
@@ -56,28 +56,28 @@ Return a possibly-empty list of path names that match pathname, which must be a 
 **str. rstrip([chars])** - https://docs.python.org/2/library/stdtypes.html?highlight=rstrip#str.rstrip
 Return a copy of the string with trailing characters removed. The chars argument is a string specifying the set of characters to be removed. If omitted or None, the chars argument defaults to removing whitespace. The chars argument is not a suffix; rather, all combinations of its values are stripped:
 
-~~~~
+```python
 >>> '   spacious   '.rstrip()
 '   spacious'
 >>> 'mississippi'.rstrip('ipz')
 'mississ'
-~~~~
+```
 
 
 ## 11 lines: Triple-quoted strings, while loop 
 
 For Python 3 just add parenthesis:
-~~~~
+```python
     print( REFRAIN % (bottles_of_beer, bottles_of_beer,
         bottles_of_beer - 1))
-~~~~
+```
 
 
 ## 13 lines: Unit testing with unittest 
 
 
 Python 2:
-~~~~
+```python
 import unittest
 def median(pool):
     copy = sorted(pool)
@@ -91,12 +91,12 @@ class TestMedian(unittest.TestCase):
         self.failUnlessEqual(median([2, 9, 9, 7, 9, 2, 4, 5, 8]), 7)
 if __name__ == '__main__':
     unittest.main()
-~~~~
+```
 
 Python 3:
 - use // for integer division because list indices must be integers or slices, not float.
 - user assertEqual instead of failUnlessEqual
-~~~~
+```python
 import unittest
 def median(pool):
     copy = sorted(pool)
@@ -110,7 +110,7 @@ class TestMedian(unittest.TestCase):
         self.assertEqual(median([2, 9, 9, 7, 9, 2, 4, 5, 8]), 7)
 if __name__ == '__main__':
     unittest.main()
-~~~~
+```
 
 
 ## 14 lines: Doctest-based testing 
@@ -124,8 +124,6 @@ https://docs.python.org/2/library/doctest.html?highlight=doctest#how-are-docstri
 
 For Python 3 just add parenthesis where needed in the print functions.
 
-General link: https://stackoverflow.com/questions/20986463/multi-variable-for-loops-python
-
 **str.splitlines()** - http://python-reference.readthedocs.io/en/latest/docs/str/splitlines.html  
 Returns a list of the lines in the string, breaking at line boundaries.
 
@@ -133,7 +131,7 @@ Returns a list of the lines in the string, breaking at line boundaries.
 Tutorial control flow: https://docs.python.org/2/tutorial/controlflow.html#for-statements  
 Reference: https://docs.python.org/2/reference/compound_stmts.html#for  
 
-~~~~
+```python
 # Given a matrix or a map, you can cycle through it by lines (using only 1 index) 
 # or by columns (using a number of indexes equal to the number of columns per row)
 
@@ -163,7 +161,7 @@ print
 for i,j,k in list2:
     print i,',', j,',', k
 print
-~~~~
+```
 
 **bool([x])** - https://docs.python.org/2/library/functions.html#bool  
 If there is an argument x, then it is converted using the standard truth testing procedure. If x is false or omitted, this returns False; otherwise it returns True. Without arguments it returns False:
@@ -173,30 +171,32 @@ If there is an argument x, then it is converted using the standard truth testing
 **itertools.groupby** - https://docs.python.org/2/library/itertools.html#itertools.groupby  
 The operation of groupby() is similar to the uniq filter in Unix. It generates a break or new group every time the value of the key function changes (which is why it is usually necessary to have sorted the data using the same key function). That behavior differs from SQL’s GROUP BY which aggregates common elements regardless of their input order.  
 
-**str.join(iterable)** - http://python-reference.readthedocs.io/en/latest/docs/str/join.html?highlight=join
+**str.join(iterable)** - http://python-reference.readthedocs.io/en/latest/docs/str/join.html?highlight=join  
 Returns a string made from the elements of an iterable, split by [str].
   
 This line:
-~~~~
+```python
 groupby(lines, bool):
-~~~~
+```
 means: apply bool() to the each element of the list lines and generate a new iterable group, basically another list (key = what is returned by bool, value = iterable group) every time bool() changes.  
-Therefore it will generate something similar to:
-(False, [''])  
-(True, ['This is the','first paragraph.'])  
-(False, [''])  
-(True, ['This is the second.'])  
-  
+Therefore it will generate something similar to:  
+```
+- (False, [''])  
+- (True, ['This is the','first paragraph.'])  
+- (False, [''])  
+- (True, ['This is the second.'])  
+```
+
 This line:
-~~~~
+```python
 for has_chars, frags in groupby(lines, bool):
-~~~~
+```
 means: run a for loop on the list of groups created and use the variables *has_chars* and *frags* to refer to the current key and current iterable group.
 
 
 
 The output is more comprehensible if you run this:
-~~~~
+```python
 from itertools import groupby
 lines = '''
 This is the
@@ -218,7 +218,7 @@ for has_chars, frags in groupby(lines, bool):
 # PRINTS:
 # This is the first paragraph.
 # This is the second.
-~~~~  
+```  
 
 
 ## 16 lines: csv module, tuple unpacking, cmp() built-in 
