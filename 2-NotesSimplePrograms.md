@@ -171,13 +171,29 @@ If there is an argument x, then it is converted using the standard truth testing
  bool('fasda') = True
 
 **itertools.groupby** - https://docs.python.org/2/library/itertools.html#itertools.groupby  
-The operation of groupby() is similar to the uniq filter in Unix. It generates a break or new group every time the value of the key function changes (which is why it is usually necessary to have sorted the data using the same key function). That behavior differs from SQL’s GROUP BY which aggregates common elements regardless of their input order.
+The operation of groupby() is similar to the uniq filter in Unix. It generates a break or new group every time the value of the key function changes (which is why it is usually necessary to have sorted the data using the same key function). That behavior differs from SQL’s GROUP BY which aggregates common elements regardless of their input order.  
 
+**str.join(iterable)** - http://python-reference.readthedocs.io/en/latest/docs/str/join.html?highlight=join
+Returns a string made from the elements of an iterable, split by [str].
+  
+This line:
+~~~~
+groupby(lines, bool):
+~~~~
+means: apply bool() to the each element of the list lines and generate a new iterable group, basically another list (key = what is returned by bool, value = iterable group) every time bool() changes.  
+Therefore it will generate something similar to:
+(False, [''])  
+(True, ['This is the','first paragraph.'])  
+(False, [''])  
+(True, ['This is the second.'])  
+  
 This line:
 ~~~~
 for has_chars, frags in groupby(lines, bool):
 ~~~~
-means: apply bool() to the each element of the list lines and generate a new iterable group, basically another list (key = what is returned by bool, value = group) every time bool() changes. Run a for loop on the list of groups created and use the variables *has_chars* and *frags* to refer to the current key and current value.
+means: run a for loop on the list of groups created and use the variables *has_chars* and *frags* to refer to the current key and current iterable group.
+
+
 
 The output is more comprehensible if you run this:
 ~~~~
