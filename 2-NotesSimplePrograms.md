@@ -174,7 +174,7 @@ The operation of groupby() is similar to the uniq filter in Unix. It generates a
 **str.join(iterable)** - http://python-reference.readthedocs.io/en/latest/docs/str/join.html?highlight=join  
 Returns a string made from the elements of an iterable, split by [str].
   
-This line:
+This line
 ```python
 groupby(lines, bool):
 ```
@@ -187,7 +187,7 @@ Therefore it will generate something similar to:
 (True, ['This is the second.'])  
 ```
 
-This line:
+This line
 ```python
 for has_chars, frags in groupby(lines, bool):
 ```
@@ -228,7 +228,7 @@ for has_chars, frags in groupby(lines, bool):
 **cmp** - https://docs.python.org/2/library/functions.html?highlight=cmp#cmp  
 cmp(x, y): compares the two objects x and y and return an integer according to the outcome. The return value is negative if x < y, zero if x == y and strictly positive if x > y.
    
-This line:
+This line
 ```python
 cmp(float(change), 0.0)
 ```
@@ -239,7 +239,48 @@ means: compare the float version of change with 0.0
 
 ## 18 lines: 8-Queens Problem (recursion) 
 
+https://en.wikipedia.org/wiki/Eight_queens_puzzle
+The eight queens puzzle is the problem of placing eight chess queens on an 8×8 chessboard so that no two queens threaten each other.
 
+The program prints out all the solutions to the problem five an initial BOARD_SIZE.
+
+**reversed(seq)** - https://docs.python.org/2/library/functions.html?highlight=reversed#reversed  
+Return a reverse iterator. seq must be an object which has a __reversed__() method or supports the sequence protocol (the __len__() method and the __getitem__() method with integer arguments starting at 0).
+
+**range(start, stop[, step])** - https://docs.python.org/2/library/functions.html#range
+This is a versatile function to create lists containing arithmetic progressions:
+```bash
+>>> range(10)
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> range(1, 11)
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+>>> range(0, 30, 5)
+[0, 5, 10, 15, 20, 25]
+>>> range(0, 10, 3)
+[0, 3, 6, 9]
+>>> range(0, -10, -1)
+[0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
+>>> range(0)
+[]
+>>> range(1, 0)
+[]
+```
+
+**xrange(start, stop[, step])** - https://docs.python.org/2/library/functions.html#xrange  
+This function is very similar to range(), but returns an xrange object instead of a list.   
+
+The xrange type is an immutable sequence which is commonly used for looping. The advantage of the xrange type is that an xrange object will always take the same amount of memory, no matter the size of the range it represents. There are no consistent performance advantages.  
+
+The xrange type is an opaque sequence type which yields the same values as the corresponding list, without actually storing them all simultaneously. The advantage of xrange() over range() is minimal (since xrange() still has to create the values when asked for them) except when a very large range is used on a memory-starved machine or when all of the range’s elements are never used (such as when the loop is usually terminated with break).
+
+This part of the code
+```python
+    return [solution+[(n,i+1)]
+        for i in xrange(BOARD_SIZE)
+            for solution in smaller_solutions
+                if not under_attack(i+1, solution)]
+```
+means: return the list of the sums between solution+[(n,i+1)] generated with the 2 for loops.
 
 ## 20 lines: Prime numbers sieve w/fancy generators 
 
