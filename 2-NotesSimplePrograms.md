@@ -181,10 +181,10 @@ groupby(lines, bool):
 means: apply bool() to the each element of the list lines and generate a new iterable group, basically another list (key = what is returned by bool, value = iterable group) every time bool() changes.  
 Therefore it will generate something similar to:  
 ```
-- (False, [''])  
-- (True, ['This is the','first paragraph.'])  
-- (False, [''])  
-- (True, ['This is the second.'])  
+(False, [''])  
+(True, ['This is the','first paragraph.'])  
+(False, [''])  
+(True, ['This is the second.'])  
 ```
 
 This line:
@@ -220,10 +220,22 @@ for has_chars, frags in groupby(lines, bool):
 # This is the second.
 ```  
 
-
 ## 16 lines: csv module, tuple unpacking, cmp() built-in 
 
+**csv library** - https://docs.python.org/2/library/csv.html?highlight=csv#module-csv  
+**open** - https://docs.python.org/3/library/functions.html#open  
 
+**cmp** - https://docs.python.org/2/library/functions.html?highlight=cmp#cmp  
+cmp(x, y): compares the two objects x and y and return an integer according to the outcome. The return value is negative if x < y, zero if x == y and strictly positive if x > y.
+   
+This line:
+```python
+cmp(float(change), 0.0)
+```
+means: compare the float version of change with 0.0
+- if float(change) < 0.0, then return a negative value (-1) 
+- if float(change) == 0.0, then return 0
+- if float(change) < 0.0, then return a positive value (1).
 
 ## 18 lines: 8-Queens Problem (recursion) 
 
