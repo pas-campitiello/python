@@ -321,10 +321,10 @@ mean:
 - take the next number in the initial iterator *numbers*
 - create a generator object, return it and continue
 - then each number x in numbers, perform x mod prime  
--- if the result is 0, then yield x  
--- if the result is not 0, then do not yield or return anything  
--- the x returned will form an iterator of generators (if you print it you loose it) stored again in *numbers*.  
--- in this way after the first loop numbers will contain all the numbers not divisible by 2, then those not divisible by 2 and 3, then those not divisible by 2,3,5, and so on, therefore numbers.next() will always give the next prime number in the iteration.
+  - if the result is 0, then yield x  
+  - if the result is not 0, then do not yield or return anything    
+  - the x returned will form an iterator of generators (if you print it you loose it) stored again in *numbers*.  
+  - in this way after the first loop numbers will contain all the numbers not divisible by 2, then those not divisible by 2 and 3, then those not divisible by 2,3,5, and so on, therefore numbers.next() will always give the next prime number in the iteration.
 
 For Python 3 version see here: https://github.com/python/mypy/issues/1227  
 
