@@ -348,6 +348,10 @@ for p in iter_primes():
 
 ## 21 lines: XML/HTML parsing (using Python 2.5 or third-party library) 
 
+**set** - https://docs.python.org/2/library/sets.html  
+**ElementTree library** - http://effbot.org/zone/element-index.htm  
+
+For Python 3 just add parenthesis to the print function.
 
 
 ## 28 lines: 8-Queens Problem (define your own exceptions) 
