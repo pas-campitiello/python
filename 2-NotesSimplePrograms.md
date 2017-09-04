@@ -284,6 +284,47 @@ means: return the list of the sums between solution+[(n,i+1)] generated with the
 
 ## 20 lines: Prime numbers sieve w/fancy generators 
 
+**itertools.count(start=0, step=1)** - https://docs.python.org/2/library/itertools.html#itertools.count  
+Make an iterator that returns evenly spaced values starting with n. 
+Equivalent to:
+```python
+def count(start=0, step=1):
+    # count(10) --> 10 11 12 13 14 ...
+    # count(2.5, 0.5) -> 2.5 3.0 3.5 ...
+    n = start
+    while True:
+        yield n
+        n += step
+```
+
+**yield** - For an explanation about see here: https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do  
+**yield** is a keyword that is used like *return*, except the function will return a generator [and it does not exit from the current block of code]. [...] it's handy when you know your function will return a huge set of values that you will only need to read once.
+
+**__rmod__()**  
+This 
+```python
+prime = 7
+print prime.__rmod__(88)
+```
+returns 4 (= 88 mod 7).
+
+**itertools.ifilter(predicate, iterable)** - https://docs.python.org/2/library/itertools.html#itertools.ifilter  
+Make an iterator that filters elements from iterable returning only those for which the predicate is **True** or **1**. If predicate is None, return the items that are true. 
+
+These lines
+```python
+prime = numbers.next()
+yield prime
+numbers = itertools.ifilter(prime.__rmod__, numbers)
+```
+mean: 
+- take the next number in the initial iterator *numbers*
+- create a generator object, return it and continue
+- then each number x in numbers, perform x mod prime
+-- if the result is 0, then yield x
+-- if the result is not 0, then do not yield or return anything
+-- the x returned will form an iterator of generators (if you print it you loose it) stored again in *numbers*.
+-- in this way after the first loop numbers will contain all the numbers not divisible by 2, then those not divisible by 2 and 3, then those not divisible by 2,3,5, and so on, therefore numbers.next will always give the next prime number in the iteration.
 
 
 ## 21 lines: XML/HTML parsing (using Python 2.5 or third-party library) 
