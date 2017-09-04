@@ -320,12 +320,31 @@ numbers = itertools.ifilter(prime.__rmod__, numbers)
 mean: 
 - take the next number in the initial iterator *numbers*
 - create a generator object, return it and continue
-- then each number x in numbers, perform x mod prime
---- if the result is 0, then yield x
---- if the result is not 0, then do not yield or return anything
---- the x returned will form an iterator of generators (if you print it you loose it) stored again in *numbers*.
---- in this way after the first loop numbers will contain all the numbers not divisible by 2, then those not divisible by 2 and 3, then those not divisible by 2,3,5, and so on, therefore numbers.next will always give the next prime number in the iteration.
+- then each number x in numbers, perform x mod prime  
+-- if the result is 0, then yield x  
+-- if the result is not 0, then do not yield or return anything  
+-- the x returned will form an iterator of generators (if you print it you loose it) stored again in *numbers*.  
+-- in this way after the first loop numbers will contain all the numbers not divisible by 2, then those not divisible by 2 and 3, then those not divisible by 2,3,5, and so on, therefore numbers.next() will always give the next prime number in the iteration.
 
+For Python 3 version see here: https://github.com/python/mypy/issues/1227  
+
+```python
+import itertools
+from typing import Iterator
+
+def iter_primes() -> Iterator[int]:
+    numbers = itertools.count(2)
+    while True:
+        prime = next(numbers)
+        yield prime
+
+        numbers = filter(prime.__rmod__, numbers)
+
+for p in iter_primes():
+    if p > 1000:
+        break
+    print(p)
+```
 
 ## 21 lines: XML/HTML parsing (using Python 2.5 or third-party library) 
 
