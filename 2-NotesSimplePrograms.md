@@ -247,7 +247,7 @@ The program prints out all the solutions to the problem five an initial BOARD_SI
 **reversed(seq)** - https://docs.python.org/2/library/functions.html?highlight=reversed#reversed  
 Return a reverse iterator. seq must be an object which has a __reversed__() method or supports the sequence protocol (the __len__() method and the __getitem__() method with integer arguments starting at 0).
 
-**range(start, stop[, step])** - https://docs.python.org/2/library/functions.html#range
+**range(start, stop[, step])** - https://docs.python.org/2/library/functions.html#range  
 This is a versatile function to create lists containing arithmetic progressions:
 ```bash
 >>> range(10)
@@ -356,8 +356,56 @@ For Python 3 just add parenthesis to the print function.
 
 ## 28 lines: 8-Queens Problem (define your own exceptions) 
 
+**pass** - https://docs.python.org/2/tutorial/controlflow.html#pass-statements  
+The pass statement does nothing. It can be used when a statement is required syntactically but the program requires no action.
+
+**reversed** - https://docs.python.org/2/library/functions.html#reversed  
+Return a reverse iterator. 
+
+**raise** - https://docs.python.org/3/tutorial/errors.html  
+Raise and exception or re-raise the same exception in an exception handler.
+
+**str.join(iterable)** - http://python-reference.readthedocs.io/en/latest/docs/str/join.html?highlight=join  
+Returns a string made from the elements of an iterable, split by [str].
 
 
 ## 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com 
 
+**raw_input([prompt])** - https://docs.python.org/2/library/functions.html#raw_input  
+If the prompt argument is present, it is written to standard output without a trailing newline. The function then reads a line from input, converts it to a string (stripping a trailing newline), and returns that. In Python 3 it has been [renamed](https://docs.python.org/3/library/functions.html#input) in: **input** - https://docs.python.org/3/whatsnew/3.0.html#builtins.
 
+**random.randint(a,b)** - https://docs.python.org/2/library/random.html#random.randint  
+Return a random integer N such that a <= N <= b.
+
+For Python 3:
+
+```python
+import random
+
+guesses_made = 0
+
+name = input('Hello! What is your name?\n')
+
+number = random.randint(1, 20)
+print('Well, {0}, I am thinking of a number between 1 and 20.'.format(name))
+
+while guesses_made < 6:
+
+    guess = int(input('Take a guess: '))
+
+    guesses_made += 1
+
+    if guess < number:
+        print('Your guess is too low.')
+
+    if guess > number:
+        print('Your guess is too high.')
+
+    if guess == number:
+        break
+
+if guess == number:
+    print('Good job, {0}! You guessed my number in {1} guesses!'.format(name, guesses_made))
+else:
+    print('Nope. The number I was thinking of was {0}'.format(number))
+```
