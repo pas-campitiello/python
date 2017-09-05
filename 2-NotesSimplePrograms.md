@@ -372,7 +372,7 @@ Returns a string made from the elements of an iterable, split by [str].
 ## 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com 
 
 **raw_input([prompt])** - https://docs.python.org/2/library/functions.html#raw_input  
-If the prompt argument is present, it is written to standard output without a trailing newline. The function then reads a line from input, converts it to a string (stripping a trailing newline), and returns that. In Python 3 it has been [renamed](https://docs.python.org/3/library/functions.html#input) in: **input** - https://docs.python.org/3/whatsnew/3.0.html#builtins.
+If the prompt argument is present, it is written to standard output without a trailing newline. The function then reads a line from input, converts it to a string (stripping a trailing newline), and returns that. In Python 3 it has been [renamed](https://docs.python.org/3/whatsnew/3.0.html#builtins) in: **input** - https://docs.python.org/3/library/functions.html#input.
 
 **random.randint(a,b)** - https://docs.python.org/2/library/random.html#random.randint  
 Return a random integer N such that a <= N <= b.
