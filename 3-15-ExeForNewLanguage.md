@@ -7,7 +7,7 @@ Inspired by: http://www.ign.com/boards/threads/15-exercises-for-learning-a-new-p
 Display series of numbers (1,2,3,4, 5....etc) in an infinite loop.  
 The program should quit if someone hits a specific key (Say ESCAPE key).
 
-Infinite number printing loop with 0.5 seconds delay:
+Infinite loop printing numbers with 0.5 seconds delay:
 ```python
 
 import time
