@@ -21,7 +21,19 @@ while True:
 
 **curses library** - https://docs.python.org/3/howto/curses.html  
 
+Infinite loop, waiting for ESCape to be pressed to exit:
 ```python
+import curses
+
+def main(stdscr):
+
+    while True:
+
+        c = stdscr.getch()
+        if c == 27:
+            break   # Exit the while loop for ES
+
+curses.wrapper(main)
 ```
 
 ## Exercise 2
