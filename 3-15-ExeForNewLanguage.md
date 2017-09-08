@@ -36,6 +36,15 @@ def main(stdscr):
 curses.wrapper(main)
 ```
 
+or with [input](https://docs.python.org/2/library/functions.html#input):
+```python
+while True:
+
+    c = input("> ")
+    if c == "q":    # ESC code
+        break       # Exit the while loop for ESC
+```
+
 ## Exercise 2
 Fibonacci series, swapping two variables, finding maximum/minimum among a list of numbers.
 
