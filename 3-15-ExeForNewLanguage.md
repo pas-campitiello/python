@@ -41,8 +41,8 @@ or with [input](https://docs.python.org/2/library/functions.html#input):
 while True:
 
     c = input("> ")
-    if c == "q":    # ESC code
-        break       # Exit the while loop for ESC
+    if c == "q":    
+        break       # Exit the while loop for "q"
 ```
 
 ## Exercise 2
