@@ -1,18 +1,15 @@
-import time
 import curses
+import time
 
-def main(stdscr):
+def main(win):
+
+    win.nodelay(1)
     i = 0
 
-    while stdscr.getch() != 27: # Code for ESC key
-
-        print(str(i) + " " + str(c))
-        time.sleep(0.5)
+    while win.getch() != 27:
+        win.addstr("{0}\n".format(str(i)))
         i+=1
-        
-        #if c == 27:
-        #    break   # Exit the while loop for ES
-        #elif c == ord('q'):
-        #    break   # Exit the while loop
+        time.sleep(0.1)
 
 curses.wrapper(main)
+
