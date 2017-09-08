@@ -5,7 +5,7 @@ Inspired by: http://www.ign.com/boards/threads/15-exercises-for-learning-a-new-p
 
 ## Exercise 1
 Display series of numbers (1,2,3,4, 5....etc) in an infinite loop.  
-The program should quit if someone hits a specific key (Say ESCAPE key).
+The program should quit if someone hits a specific key (say ESCAPE key).
 
 Infinite loop printing numbers with 0.5 seconds delay:
 ```python
@@ -72,7 +72,7 @@ while input(">") != "q":
 
 Also using a combination of othere libraries the problem is the same, see [here](https://stackoverflow.com/questions/34497323/what-is-the-easiest-way-to-detect-key-presses-in-python-3-on-a-linux-machine).
 
-Reading [here](http://forums.xkcd.com/viewtopic.php?t=99890) I discovered the thread example; modifying it slightly it looks like:
+Reading [here](http://forums.xkcd.com/viewtopic.php?t=99890) I discovered a thread example; modifying it slightly it looks like:
 ```python
 import _thread, time, sys
 
@@ -114,8 +114,28 @@ def main(stdscr):
 
 curses.wrapper(main)
 ```
-Now this is solutions works pretty well except that it prints the numbers with some initial spaces.
+Now this is solutions works pretty well except that it prints the numbers with some initial spaces. This is [because](https://docs.python.org/3/howto/curses.html#what-is-curses):  
+The curses library provides fairly basic functionality, providing the programmer with an abstraction of a display containing multiple non-overlapping windows of text. 
 
+The library curses creates and returns a special window overlapped to the terminal one, in order to interact with curses window you are supposed to use its internal functions. In this case the function print will not work properly within curses window, the correct function to use is **addstr**, see [here](https://docs.python.org/3/library/curses.html?highlight=addstr#curses.window.addstr).
+
+Therefore this is the solution I was looking for to display a series of numbers (1,2,3,4, 5....etc) in an infinite loop quitting if the user hits the ESCape key:
+```python
+import curses
+import time
+
+def main(win):
+
+    win.nodelay(1)
+    i = 0
+
+    while win.getch() != 27:
+        win.addstr("{0}\n".format(str(i)))
+        i+=1
+        time.sleep(0.1)
+
+curses.wrapper(main)
+```
 
 ## Exercise 2
 Fibonacci series, swapping two variables, finding maximum/minimum among a list of numbers.
