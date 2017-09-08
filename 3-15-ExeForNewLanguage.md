@@ -5,7 +5,7 @@ Inspired by: http://www.ign.com/boards/threads/15-exercises-for-learning-a-new-p
 
 ## Exercise 1
 Display series of numbers (1,2,3,4, 5....etc) in an infinite loop.  
-The program should quit if someone hits a specific key (Say ESCAPE key).
+The program should quit if someone hits a specific key (say ESCAPE key).
 
 Infinite loop printing numbers with 0.5 seconds delay:
 ```python
@@ -32,6 +32,107 @@ def main(stdscr):
         c = stdscr.getch()
         if c == 27: # ESC code
             break   # Exit the while loop for ESC
+
+curses.wrapper(main)
+```
+
+or with [input](https://docs.python.org/2/library/functions.html#input):
+```python
+while True:
+
+    c = input("> ")
+    if c == "q":    
+        break       # Exit the while loop for "q"
+```
+
+Mixing the things, it works but the input of a char blocks the loop, for example using both curses and input:
+```python
+import curses
+import time
+
+def main(stdscr):
+
+    i = 0
+
+    while stdscr.getch() != 27:
+        print(i)
+        i+=1
+        time.sleep(0.5)
+
+curses.wrapper(main)
+
+
+i = 0
+
+while input(">") != "q":
+    print(i)
+    i+=1
+    time.sleep(0.5)
+```
+
+Also using a combination of othere libraries the problem is the same, see [here](https://stackoverflow.com/questions/34497323/what-is-the-easiest-way-to-detect-key-presses-in-python-3-on-a-linux-machine).
+
+Reading [here](http://forums.xkcd.com/viewtopic.php?t=99890) I discovered a thread example; modifying it slightly it looks like:
+```python
+import _thread, time, sys
+
+def input_thread(L):
+    input()
+    print("aaaaa")    
+    
+def do_print():
+    L = []
+    _thread.start_new_thread(input_thread, (L,))
+    i = 0    
+    while 1:
+        if L: break
+        time.sleep(1)
+        print(i)
+        i += 1
+       
+do_print()
+```
+but this has another problem in Linux (Ubuntu 17.04): the loop works and it accepts inputs but to verify the input it's necessary to press Enter, and when input_thread(L) returns, the thread [silently exits](https://docs.python.org/3/library/_thread.html#_thread.start_new_thread) and the function is executed only once. Executing the code above: 0 will be printed to the screen, then you have 1 second to type something, press Enter and see "aaaaa". In any case, after the first input the thread with input_thread(L) exits, even if you can input some chars while the numbers are printed, that input is not read or stored anywhere.
+
+There must be a solution simpler than a thread based one. Reading in the same forum I discovered also the function **nodelay()** in curses:
+- https://docs.python.org/3/howto/curses.html#user-input
+- https://docs.python.org/2/library/curses.html
+
+```python
+import curses
+import time
+
+def main(stdscr):
+
+    stdscr.nodelay(1)
+    i = 0
+
+    while stdscr.getch() != 27:
+        print(i)
+        i+=1
+        time.sleep(0.1)
+
+curses.wrapper(main)
+```
+Now this is solutions works pretty well except that it prints the numbers with some initial spaces. This is [because](https://docs.python.org/3/howto/curses.html#what-is-curses):  
+The curses library provides fairly basic functionality, providing the programmer with an abstraction of a display containing multiple non-overlapping windows of text. 
+
+The library curses creates and returns a special window overlapped to the terminal one, in order to interact with curses window you are supposed to use its internal functions. In this case the function print will not work properly within curses window, the correct function to use is **addstr**, see [here](https://docs.python.org/3/library/curses.html?highlight=addstr#curses.window.addstr).
+
+Therefore this is the solution I was looking for to display a series of numbers (1,2,3,4, 5....etc) in an infinite loop quitting if the user hits the ESCape key:
+```python
+import curses
+import time
+
+def main(win):
+
+    win.nodelay(1)
+    i = 0
+
+    while win.getch() != 27:
+        win.addstr("{0}\n".format(str(i)))
+        i+=1
+        time.sleep(0.1)
 
 curses.wrapper(main)
 ```
