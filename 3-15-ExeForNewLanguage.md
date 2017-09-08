@@ -45,6 +45,78 @@ while True:
         break       # Exit the while loop for "q"
 ```
 
+Mixing the things, it works but the input of a char blocks the loop, for example using both curses and input:
+```python
+import curses
+import time
+
+def main(stdscr):
+
+    i = 0
+
+    while stdscr.getch() != 27:
+        print(i)
+        i+=1
+        time.sleep(0.5)
+
+curses.wrapper(main)
+
+
+i = 0
+
+while input(">") != "q":
+    print(i)
+    i+=1
+    time.sleep(0.5)
+```
+
+Also using a combination of othere libraries the problem is the same, see [here](https://stackoverflow.com/questions/34497323/what-is-the-easiest-way-to-detect-key-presses-in-python-3-on-a-linux-machine).
+
+Reading [here](http://forums.xkcd.com/viewtopic.php?t=99890) I discovered the thread example; modifying it slightly it looks like:
+```python
+import _thread, time, sys
+
+def input_thread(L):
+    input()
+    print("aaaaa")    
+    
+def do_print():
+    L = []
+    _thread.start_new_thread(input_thread, (L,))
+    i = 0    
+    while 1:
+        if L: break
+        time.sleep(1)
+        print(i)
+        i += 1
+       
+do_print()
+```
+but this has another problem in Linux (Ubuntu 17.04): the loop works and it accepts inputs but to verify the input it's necessary to press Enter, and when input_thread(L) returns, the thread [silently exits](https://docs.python.org/3/library/_thread.html#_thread.start_new_thread) and the function is executed only once. Executing the code above: 0 will be printed to the screen, then you have 1 second to type something, press Enter and see "aaaaa". In any case, after the first input the thread with input_thread(L) exits, even if you can input some chars while the numbers are printed, that input is not read or stored anywhere.
+
+There must be a solution simpler than a thread based one. Reading in the same forum I discovered also the function **nodelay()** in curses:
+- https://docs.python.org/3/howto/curses.html#user-input
+- https://docs.python.org/2/library/curses.html
+
+```python
+import curses
+import time
+
+def main(stdscr):
+
+    stdscr.nodelay(1)
+    i = 0
+
+    while stdscr.getch() != 27:
+        print(i)
+        i+=1
+        time.sleep(0.1)
+
+curses.wrapper(main)
+```
+Now this is solutions works pretty well except that it prints the numbers with some initial spaces.
+
+
 ## Exercise 2
 Fibonacci series, swapping two variables, finding maximum/minimum among a list of numbers.
 
