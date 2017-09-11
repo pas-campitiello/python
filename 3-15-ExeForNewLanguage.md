@@ -296,32 +296,9 @@ Modify the above program such that it will ask for 'Do you want to calculate aga
 if you say 'y', it'll again ask the parameters. If 'n', it'll exit. (Do while loop).
 
 While running the program give value mu = 0. See what happens. Does it give 'DIVIDE BY ZERO' error?
-Does it give 'Segmentation fault..core dump?'. How to handle this situation. Is there something built
-in the language itself? (Exception Handling)
+Does it give 'Segmentation fault..core dump?'.  
+How to handle this situation. Is there something built in the language itself? (Exception Handling).
 
-``` python
-again = "y"
-
-while again == "y":
-
-    D = float(input("Insert diameter or the characteristic linear dimension in m: "))
-    v = float(input("Insert the velocity of the fluid with respect to the object in m/s: ")) 
-    rho = float(input("Insert the density of the fluid in SI units kg/m^3: "))
-    mu = float(input("Insert the dynamic viscosity of the fluid in Pa·s or N·s/m^2 or kg/m·s: "))
-
-    Re = (D*v*rho) / mu  
-
-    print(Re)
-
-    if (Re <= 2100):
-        print("Laminar flow")
-    elif (Re > 2100 and Re <= 4000):
-        print("Transient flow") 
-    else:
-        print("Turbulent Flow")
-
-    again = input("Do you want to calculate again (y/n)? ")
-```
 See here: https://docs.python.org/3/tutorial/errors.html
 ``` python
 again = "y"
