@@ -140,6 +140,61 @@ curses.wrapper(main)
 ## Exercise 2
 Fibonacci series, swapping two variables, finding maximum/minimum among a list of numbers.
 
+Fibonacci 1:
+```python
+import curses
+import time
+
+def main(win):
+
+    win.nodelay(1)
+    init = 0
+    prec = 0    
+    next = 1
+
+    while win.getch() != 27:
+        win.addstr("{0}\n".format(str(next)))
+           
+        prec = next     
+        next = next + init
+        init = prec
+        
+        time.sleep(0.5)
+
+curses.wrapper(main)
+```
+
+Fibonacci 2:
+```python
+init = 0
+prec = 0    
+next = 1
+
+while next < 1000:
+    prec = next     
+    next = next + init
+    init = prec
+    print(next)
+```
+
+I also found a nice function [here](https://stackoverflow.com/questions/494594/how-to-write-the-fibonacci-sequence-in-python) to print the **n**th Fibonacci number:
+```python
+def F(n):
+    if n == 0: return 0
+    elif n == 1: return 1
+    else: return F(n-1)+F(n-2) 
+
+print(F(10))
+```
+
+Find maximum and minimum elements in a list is as simple as this:
+```python
+numlist = [1,14,57,9,40,4,3,2,22,66,88,99,10]
+print(max(numlist))
+print(min(numlist))
+```
+
+
 ## Exercise 3
 Accepting series of numbers, strings from keyboard and sorting them ascending, descending order.
 
