@@ -273,6 +273,8 @@ where:
     μ is the dynamic viscosity of the fluid (Pa·s or N·s/m^2 or kg/m·s)
     ν is the kinematic viscosity of the fluid (m^2/s).
 
+so:
+
 ```python
 D = float(input("Insert diameter or the characteristic linear dimension in m: "))
 v = float(input("Insert the velocity of the fluid with respect to the object in m/s: ")) 
