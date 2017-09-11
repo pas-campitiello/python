@@ -253,11 +253,28 @@ print("Sorted descending: ",sorted(strings, reverse=True))
 ```
 
 ## Exercise 4
-Reynolds number is calculated using formula (D*v*rho)/mu Where D = Diameter, V= velocity, rho = density mu = viscosity
-Write a program that will accept all values in appropriate units (Don't worry about unit conversion)
-If number is < 2100, display Laminar flow,
-If it’s between 2100 and 4000 display 'Transient flow' and
+Reynolds number is calculated using formula (D*v*rho)/mu  
+Where D = Diameter, V= velocity, rho = density mu = viscosity  
+Write a program that will accept all values in appropriate units (Don't worry about unit conversion)  
+If number is < 2100, display Laminar flow,  
+If it’s between 2100 and 4000 display 'Transient flow' and  
 if more than '4000', display 'Turbulent Flow' (If, else, then...)
+
+What are the "appropriate units"?  
+According to [Wikipedia](https://en.wikipedia.org/wiki/Reynolds_number), the Reynolds number is defined as  
+
+    Re = ρ u L / μ = u L / ν 
+
+where:  
+
+    ρ is the density of the fluid (SI units: kg/m^3)
+    u is the velocity of the fluid with respect to the object (m/s)
+    L is a characteristic linear dimension (m)
+    μ is the dynamic viscosity of the fluid (Pa·s or N·s/m^2 or kg/m·s)
+    ν is the kinematic viscosity of the fluid (m^2/s).
+
+
+
 
 ## Exercise 5
 Modify the above program such that it will ask for 'Do you want to calculate again (y/n),
