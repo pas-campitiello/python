@@ -140,8 +140,117 @@ curses.wrapper(main)
 ## Exercise 2
 Fibonacci series, swapping two variables, finding maximum/minimum among a list of numbers.
 
+Fibonacci 1:
+```python
+import curses
+import time
+
+def main(win):
+
+    win.nodelay(1)
+    init = 0
+    prec = 0    
+    next = 1
+
+    while win.getch() != 27:
+        win.addstr("{0}\n".format(str(next)))
+           
+        prec = next     
+        next = next + init
+        init = prec
+        
+        time.sleep(0.5)
+
+curses.wrapper(main)
+```
+
+Fibonacci 2:
+```python
+init = 0
+prec = 0    
+next = 1
+
+while next < 1000:
+    prec = next     
+    next = next + init
+    init = prec
+    print(next)
+```
+
+I also found a nice function [here](https://stackoverflow.com/questions/494594/how-to-write-the-fibonacci-sequence-in-python) to print the **n**th Fibonacci number:
+```python
+def F(n):
+    if n == 0: return 0
+    elif n == 1: return 1
+    else: return F(n-1)+F(n-2) 
+
+print(F(10))
+```
+
+Find maximum and minimum elements in a list is as simple as this (see [built-in functions](https://docs.python.org/2/library/functions.html)):
+```python
+numlist = [1,14,57,9,40,4,3,2,22,66,88,99,10]
+print(max(numlist))
+print(min(numlist))
+```
+
+Another example:
+```python
+num = 0
+numlist = []
+while True:
+    num = input("Insert a number or 'q' to quit: ")
+    if num=="q": break    
+    numlist.append(int(num))
+
+print("List: ",numlist)
+print("Max: ",max(numlist))
+print("Min: ",min(numlist))
+```
+
 ## Exercise 3
 Accepting series of numbers, strings from keyboard and sorting them ascending, descending order.
+
+See here https://docs.python.org/2/library/functions.html#sorted  
+and here https://docs.python.org/2/howto/sorting.html#sortinghowto
+
+```python
+numbers = [9, 99, 12, 35, 46, 77]
+print("Numbers: ", numbers)
+numbers.sort()
+print("Numbers sorted: ", numbers)
+
+strings = ['zarea', 'perimeter', 'location']
+print("String: ", strings)
+strings.sort()
+print("String sorted: ",strings)
+
+print("==============")
+
+num = 0
+numbers = []
+while True:
+    num = input("Insert a number or 'q' to quit: ")
+    if num=="q": break    
+    numbers.append(int(num))
+
+print("List: ",numbers)
+print("Sorted ascending : ",sorted(numbers))
+print("Sorted descending: ",sorted(numbers, reverse=True))
+
+print("==============")
+
+inp = 0
+strings = []
+while True:
+    inp = input("Insert a string or '999' to quit: ")
+    if inp=="999": break    
+    strings.append(str(inp))
+
+print("List: ",strings)
+print("Sorted ascending : ",sorted(strings))
+print("Sorted descending: ",sorted(strings, reverse=True))
+```
 
 ## Exercise 4
 Reynolds number is calculated using formula (D*v*rho)/mu Where D = Diameter, V= velocity, rho = density mu = viscosity
