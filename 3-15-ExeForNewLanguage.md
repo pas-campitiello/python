@@ -457,8 +457,9 @@ See here:
 2) https://stackoverflow.com/questions/28873349/python-readlines-not-returning-anything
 3) https://stackoverflow.com/questions/10507230/insert-line-at-middle-of-file-with-python
 4) https://docs.python.org/3/library/stdtypes.html#list
+5) https://docs.python.org/3/library/os.html
 
-Example 1:
+Example 1, list and read files:
 ```python
 import os
 
@@ -487,14 +488,80 @@ print ("Read lines: %s" % (line))
 f2.close()
 ```
 
-Example 2:
+Example 2, modify existing and create new file:
 ```python
+print("\n----- modify the content of an existing file -----\n")
 
+f = open("contentfile.txt", "r")
+contents = f.readlines()
+f.close()
+
+print(contents)
+contents.insert(2, "New line in the middle of the content file\n")
+
+f = open("contentfile.txt", "w")
+contents = "".join(contents)
+f.write(contents)
+f.close()
+
+print()
+f = open('contentfile.txt')
+for line in f:
+    print(line, end='')
+
+
+with open('contentfile.txt', 'a') as f3:
+    f3.write("New line appended at the end of the content file.\n")
+    
+with open('contentfile.txt') as f3:
+    read_data = f3.read()
+    print ("File content again:")
+    print(read_data)
+
+print("\n----- create a new file -----\n")
+
+f = open("contentfile2.txt", "w")
+contents = f.write("Content in the new file\n")
+f.close()
+
+with open('contentfile.txt') as f3:
+    read_data = f3.read()
+    print ("File content:")
+    print(read_data)
 ```
 
-Example 3:
+Example 3, rename and delete file:
 ```python
+import os
 
+print("\n----- rename a file -----\n")
+
+os.rename("contentfile2.txt", "new_name_contentfile2.htm")
+
+with open('new_name_contentfile2.htm') as f3:
+    read_data = f3.read()
+    print ("File content again:")
+    print(read_data)
+
+try:
+    with open('contentfile2.txt') as f3:
+        read_data = f3.read()
+        print ("File content:")
+        print(read_data)
+except FileNotFoundError:
+    print("File named contentfile2.txt not found!")
+
+print("\n----- delete a file in a folder -----\n")
+
+os.remove("new_name_contentfile2.htm")
+
+try:
+    with open('new_name_contentfile2.htm') as f3:
+        read_data = f3.read()
+        print ("File content:")
+        print(read_data)
+except FileNotFoundError:
+    print("File named new_name_contentfile2.htm not found!")
 ```
 
 
@@ -502,10 +569,16 @@ Example 3:
 ## Exercise 9
 Time and Date: get system time and convert it in different formats 'DD-MON-YYYY', 'mm-dd-yyyy', 'dd/mm/yy' etc.
 
+
+
 ## Exercise 10
 Create files with date and time stamp appended to the name.
 
-
+```python
+f = open("contentfile2.txt", "w")
+contents = f.write("Content in the new file\n")
+f.close()
+```
 
 ## Exercise 11
 Input is HTML table, remove all tags and put data in a comma/tab separated file.
