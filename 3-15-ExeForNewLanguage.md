@@ -255,10 +255,10 @@ print("Sorted descending: ",sorted(strings, reverse=True))
 ## Exercise 4
 Reynolds number is calculated using formula (D*v*rho)/mu  
 Where D = Diameter, V= velocity, rho = density mu = viscosity  
-Write a program that will accept all values in appropriate units (Don't worry about unit conversion)  
+Write a program that will accept all values in appropriate units (Don't worry about unit conversion).  
 If number is < 2100, display Laminar flow,  
 If it’s between 2100 and 4000 display 'Transient flow' and  
-if more than '4000', display 'Turbulent Flow' (If, else, then...)
+if more than '4000', display 'Turbulent Flow' (If, else, then...).
 
 What are the "appropriate units"?  
 According to [Wikipedia](https://en.wikipedia.org/wiki/Reynolds_number), the Reynolds number is defined as  
@@ -298,7 +298,7 @@ Modify the above program such that it will ask for 'Do you want to calculate aga
 if you say 'y', it'll again ask the parameters. If 'n', it'll exit. (Do while loop).
 
 While running the program give value mu = 0. See what happens. Does it give 'DIVIDE BY ZERO' error?
-Does it give 'Segmentation fault..core dump?'.  
+Does it give 'Segmentation fault..core dump?'  
 How to handle this situation. Is there something built in the language itself? (Exception Handling).
 
 See here: https://docs.python.org/3/tutorial/errors.html
@@ -383,7 +383,7 @@ print("fmod(10,3)           =", math.fmod(10,3))
 
 ## Exercise 7
 Printing output in different formats (say rounding up to 5 decimal places, truncating after 4 decimal places,
-padding zeros to the right and left, right and left justification) (Input output operations)
+padding zeros to the right and left, right and left justification). (Input output operations)
 
 See here:   
 1) https://docs.python.org/3/library/math.html
@@ -426,7 +426,6 @@ print("'%.5f' % num   =", "%.5f" % num )
 print("math.pi        =", math.pi )
 print("'%5.3f' % num  =", "%5.3f" % math.pi )
 
-
 print("\n---- truncating after 4 decimal places ----\n")
 print("math.trunc(num)                  =", math.trunc(num))
 print("str(num)[:6]                     =", str(num)[:6])
@@ -451,19 +450,68 @@ print("str(num).ljust(20,' ')   =", ">", str(num).ljust(20," "), "<")
 ```
 
 ## Exercise 8
-Open a text file and convert it into HTML file. (File operations/Strings)
+Open a text file and convert it into HTML file. (File operations / Strings)
+
+See here:
+1) https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
+2) https://stackoverflow.com/questions/28873349/python-readlines-not-returning-anything
+3) https://stackoverflow.com/questions/10507230/insert-line-at-middle-of-file-with-python
+4) https://docs.python.org/3/library/stdtypes.html#list
+
+Example 1:
+```python
+import os
+
+print("----- list files in a folder -----\n")
+
+print("Files in the current folder:\n", os.listdir())
+print("\nFiles in the root folder:\n", os.listdir('/'))
+
+print("\n----- read and print content of a file -----\n")
+
+f = open('contentfile.txt')
+print ("Name of the file: ", f.name)
+for line in f:
+    print(line, end='')
+
+with open('contentfile.txt') as f:
+    read_data = f.read()
+    print ("File content again:")
+    print(read_data)
+
+f2 = open('../1-VersionsAndSetup.md')
+print ("Name of the file: ", f2.name)
+line = f2.readlines()
+print ("Read lines: %s" % (line))
+
+f2.close()
+```
+
+Example 2:
+```python
+
+```
+
+Example 3:
+```python
+
+```
+
+
 
 ## Exercise 9
-Time and Date : Get system time and convert it in different formats 'DD-MON-YYYY', 'mm-dd-yyyy', 'dd/mm/yy' etc.
+Time and Date: get system time and convert it in different formats 'DD-MON-YYYY', 'mm-dd-yyyy', 'dd/mm/yy' etc.
 
 ## Exercise 10
-Create files with date and time stamp appended to the name
+Create files with date and time stamp appended to the name.
+
+
 
 ## Exercise 11
-Input is HTML table, Remove all tags and put data in a comma/tab separated file.
+Input is HTML table, remove all tags and put data in a comma/tab separated file.
 
 ## Exercise 12
-Extract uppercase words from a file, extract unique words
+Extract uppercase words from a file, extract unique words.
 
 ## Exercise 13
 Implement word wrapping feature (Observe how word wrap works in windows 'notepad')
