@@ -7,8 +7,10 @@ New line in the middle of the content file
 New line in the middle of the content file
 New line in the middle of the content file
 New line in the middle of the content file
+New line in the middle of the content file
 line_3 and this is the third line
 
+New line appended at the end of the content file.
 New line appended at the end of the content file.
 New line appended at the end of the content file.
 New line appended at the end of the content file.
