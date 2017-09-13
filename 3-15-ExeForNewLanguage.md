@@ -629,15 +629,49 @@ f.close()
 ## Exercise 11
 Input is HTML table, remove all tags and put data in a comma/tab separated file.
 
+[Here](https://wiki.python.org/moin/SimplePrograms) there was already the 21 lines example with Python 2 that was doing a similar thing. Adapting that example this is a solution to exercise 11:
+
+```python
+
+```
+
+Reading the HTML code from another file:
+```python
+
+```
+
+Reading the HTML code from another file, without knowing the dimensions of the table:
+```python
+
+```
+
+Other libraries
+```python
+
+```
+
+
 ## Exercise 12
 Extract uppercase words from a file, extract unique words.
+
+```python
+```
 
 ## Exercise 13
 Implement word wrapping feature (Observe how word wrap works in windows 'notepad')
 
+```python
+```
+
 ## Exercise 14
 Adding/removing items in the beginning, middle and end of the array.
+
+```python
+```
 
 ## Exercise 15
 Are these features supported by your language: Operator overloading, virtual functions, references, pointers etc.
 Is there something called 'namespace / package / module' supported by your language? (Name mangling) - Read More on this.
+
+```python
+```
