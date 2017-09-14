@@ -734,9 +734,9 @@ print("Content second table:")
 printTableContent(table2)
 
 print()
-print("Writing first table to file table1ToFile.csv, values comma separated")
+print("Writing first table to file table1ToFile.csv, comma separated values")
 writeTableToFile(table1,"table1ToFile.csv",",")
-print("Writing first table to file table2ToFile.csv, values tab separated")
+print("Writing first table to file table2ToFile.csv, tab separated values")
 writeTableToFile(table2,"table2ToFile.csv","\t")
 ```
 
