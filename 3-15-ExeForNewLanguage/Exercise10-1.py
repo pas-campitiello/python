@@ -8,4 +8,4 @@ name = ()
 
 f = open("contentfile-" + timestamp + ".txt", "w")
 contents = f.write("Content in the new file with this timestamp " + timestamp)
-f.close()
+f.close()T
