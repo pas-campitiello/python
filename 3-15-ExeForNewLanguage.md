@@ -740,24 +740,29 @@ print("Writing first table to file table2ToFile.csv, tab separated values")
 writeTableToFile(table2,"table2ToFile.csv","\t")
 ```
 
-
-
 ## Exercise 12
 Extract uppercase words from a file, extract unique words.
 
+See here:
+1) https://stackoverflow.com/questions/21107505/python-word-count-from-a-txt-file-program)
+2) https://docs.python.org/3/library/collections.html#collections.Counter
+
 ```python
+
 ```
 
 ## Exercise 13
 Implement word wrapping feature (Observe how word wrap works in windows 'notepad')
 
 ```python
+
 ```
 
 ## Exercise 14
 Adding/removing items in the beginning, middle and end of the array.
 
 ```python
+
 ```
 
 ## Exercise 15
@@ -765,4 +770,5 @@ Are these features supported by your language: Operator overloading, virtual fun
 Is there something called 'namespace / package / module' supported by your language? (Name mangling) - Read More on this.
 
 ```python
+
 ```
