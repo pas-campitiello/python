@@ -746,13 +746,118 @@ Extract uppercase words from a file, extract unique words.
 See here:
 1) https://stackoverflow.com/questions/21107505/python-word-count-from-a-txt-file-program)
 2) https://docs.python.org/3/library/collections.html#collections.Counter
+3) https://docs.python.org/3/library/stdtypes.html#str.isupper
 
+Opening, printing content and searching for a word in a file, example 1:
 ```python
+def searchWordInFile(word, filename):
+    print("-------------------------------------")    
+    f = open(filename)
+    print("Searching for the word '"+word+"'...")
+    c = 0
+    lineCount = 0
+    lines = []
+    for line in f:
+        if word in line: 
+            c+=1
+            lines.append(lineCount)
+        lineCount+=1    
+    print("Word '"+word+"' found " + str(c) + " times at these lines: " + str(lines))
+    print("-------------------------------------")
 
+def openAndPrintFile(filename):
+    f = open(filename)  # read mode "r" is set up by default
+    print ("Name of the file: ", f.name)
+    print("-------------------------------------")
+    c=0
+    for line in f:
+        print(str(c) + " - " + line, end='')
+        c+=1
+    print("-------------------------------------")
+    f.close()
+
+openAndPrintFile("fileToAnalyze.txt")
+searchWordInFile("and", "fileToAnalyze.txt")
+```
+
+Opening, printing content and searching for a word in a file, example 2:
+```python
+import collections
+
+def openAndPrintFile(filename):
+    f = open(filename)  # read mode "r" is set up by default
+    print ("Name of the file: ", f.name)
+    print("-------------------------------------")
+    c=0
+    for line in f:
+        print(str(c) + " - " + line, end='')
+        c+=1
+    print("-------------------------------------")
+    f.close()
+
+def listWordsInFile(filename):
+    fileToRead = open(filename)
+    words = fileToRead.read().split()
+    fileToRead.close()
+    return words
+
+def countWordInList(listOfWords, wordToSearch):
+    c = collections.Counter(listOfWords)
+    print("The word '", wordToSearch, "' has been found ", c[wordToSearch], " times.")
+
+openAndPrintFile("fileToAnalyze.txt")
+words = listWordsInFile("fileToAnalyze.txt")
+
+print(words)
+print("-------------------------------------")
+countWordInList(words,"and")
+countWordInList(words,"Terre")
+countWordInList(words,"PUTIN")
+```
+
+Opening, printing content of a file, words frequencies, unique and uppercase words:
+```python
+def openAndPrintFile(filename):
+    f = open(filename)  # read mode "r" is set up by default
+    print ("Name of the file: ", f.name)
+    print("-------------------------------------")
+    c=0
+    for line in f:
+        print(str(c) + " - " + line, end='')
+        c+=1
+    print("-------------------------------------")
+    f.close()
+
+openAndPrintFile("fileToAnalyze.txt")
+
+file = open("fileToAnalyze.txt", "r", encoding="utf-8-sig")
+wordcount = {}
+for word in file.read().split():
+    if word not in wordcount:
+        wordcount[word] = 1
+    else:
+        wordcount[word] += 1
+file.close()
+
+uniqueWords = []
+uppercaseWords = []
+for k,v in wordcount.items():
+    if k.isupper():
+        uppercaseWords.append(k)
+    if v==1: 
+        print("{0:15} ==> {1}".format(k,v))
+        uniqueWords.append(k)
+    else:
+        print("{0:20} ==> {1}".format(k,v))
+
+print("-------------------------------------")
+print("Unique words: ", uniqueWords)
+print("-------------------------------------")
+print("Uppercase words: ", uppercaseWords)
 ```
 
 ## Exercise 13
-Implement word wrapping feature (Observe how word wrap works in windows 'notepad')
+Implement word wrapping feature (observe how word wrap works in windows 'notepad').
 
 ```python
 
