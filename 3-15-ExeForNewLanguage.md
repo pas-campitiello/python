@@ -919,7 +919,7 @@ print("{0:35} {1:40}".format("Appended 999 at the end:",str(numberList)))
 Are these features supported by your language: operator overloading, virtual functions, references, pointers, etc.?
 Is there something called "namespace / package / module" supported by your language? (Name mangling) - Read More on this.
 
-**1) Operator overloading**
+**15.1) Operator overloading**
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Operator_overloading):
 
@@ -938,14 +938,14 @@ add (a, multiply (b,c))
 
 In Python operators are overloadable by the programmer and they are limited to a predefined set.
 
-See here:
+Read these:
 1) https://docs.python.org/3/reference/datamodel.html#special-method-names
 2) http://blog.teamtreehouse.com/operator-overloading-python
 3) https://www.programiz.com/python-programming/operator-overloading
 4) http://thepythonguru.com/python-operator-overloading/
 
 
-**2) Virtual functions**
+**15.2) Virtual functions**
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Virtual_function):
 
@@ -972,16 +972,27 @@ public:
 };
 ```
 
-**3) References**
+Read these:
+1) https://stackoverflow.com/questions/4714136/how-to-implement-virtual-methods-in-python
+2) http://inspirated.com/2009/05/03/all-methods-in-python-are-effectively-virtual
+3) http://legacy.python.org/workshops/1998-11/proceedings/papers/lowis/lowis.html
+4) https://docs.python.org/3/library/abc.html
+5) https://bytes.com/topic/python/answers/23259-can-i-implement-virtual-functions-python
+6) https://www.thecodingforums.com/threads/pure-virtual-functions-in-python.715581/
 
-**4) Pointers**
+**15.3) References**
 
-**5) namespace / package / module** 
+
+**15.4) Pointers**
+
+
+**15.5) namespace / package / module** 
 
 See here:
 1) https://www.programiz.com/python-programming/namespace
 
-**6) name mangling**
+
+**15.6) name mangling**
 
 
 ```python
