@@ -393,6 +393,7 @@ See here:
 5) https://docs.python.org/3/library/stdtypes.html
 6) https://stackoverflow.com/questions/339007/nicest-way-to-pad-zeroes-to-string
 7) https://docs.python.org/3/library/stdtypes.html#old-string-formatting
+8) https://stackoverflow.com/questions/5084743/how-to-print-pretty-string-output-in-python
 
 ```python
 import operator, math, decimal
@@ -915,8 +916,73 @@ print("{0:35} {1:40}".format("Appended 999 at the end:",str(numberList)))
 ```
 
 ## Exercise 15
-Are these features supported by your language: Operator overloading, virtual functions, references, pointers etc.
-Is there something called 'namespace / package / module' supported by your language? (Name mangling) - Read More on this.
+Are these features supported by your language: operator overloading, virtual functions, references, pointers, etc.?
+Is there something called "namespace / package / module" supported by your language? (Name mangling) - Read More on this.
+
+**1) Operator overloading**
+
+From [Wikipedia](https://en.wikipedia.org/wiki/Operator_overloading):
+
+> In programming, operator overloading, sometimes termed operator ad hoc polymorphism, is a specific case of polymorphism, where different operators have different implementations depending on their arguments. Operator overloading is generally defined by a programming language, a programmer, or both.
+
+> Operator overloading is syntactic sugar (in computer science, syntactic sugar is syntax within a programming language that is designed to make things easier to read or to express), and is used because it allows programming using notation nearer to the target domain and allows user-defined types a similar level of syntactic support as types built into a language. It is common, for example, in scientific computing, where it allows computing representations of mathematical objects to be manipulated with the 
+same syntax as on paper.  
+
+> Operator overloading does not change the expressive power of a language (with functions), as it can be emulated using function calls. For example, consider variables a, b, c of some user-defined type, such as matrices:  
+a + b * c  
+
+> In a language that supports operator overloading, and with the usual assumption that the '*' operator has higher precedence than '+' operator, this is a concise way of writing:  
+add (a, multiply (b,c))  
+
+> However, the former syntax reflects common mathematical usage.
+
+In Python operators are overloadable by the programmer and they are limited to a predefined set.
+
+See here:
+1) https://docs.python.org/3/reference/datamodel.html#special-method-names
+2) http://blog.teamtreehouse.com/operator-overloading-python
+3) https://www.programiz.com/python-programming/operator-overloading
+4) http://thepythonguru.com/python-operator-overloading/
+
+
+**2) Virtual functions**
+
+From [Wikipedia](https://en.wikipedia.org/wiki/Virtual_function):
+
+> In object-oriented programming, in languages such as C++, a virtual function or virtual method is an inheritable and overridable function or method for which dynamic dispatch is facilitated. This concept is an important part of the (runtime) polymorphism portion of object-oriented programming (OOP).
+
+> For example, a base class Animal could have a virtual function eat. Subclass Llama would implement eat() differently than subclass Wolf, but one can invoke eat() on any class instance referred to as Animal, and get the eat() behaviour of the specific subclass.
+
+```c++
+class Animal {
+public:
+    void /*non-virtual*/ move(void) { 
+        std::cout << "This animal moves in some way" << std::endl; 
+    }
+    virtual void eat(void) = 0;
+};
+
+// The class "Animal" may possess a definition for eat() if desired.
+class Llama : public Animal {
+public:
+    // The non virtual function move() is inherited but not overridden
+    void eat(void) override { 
+        std::cout << "Llamas eat grass!" << std::endl; 
+    }
+};
+```
+
+**3) References**
+
+**4) Pointers**
+
+**5) namespace / package / module** 
+
+See here:
+1) https://www.programiz.com/python-programming/namespace
+
+**6) name mangling**
+
 
 ```python
 
