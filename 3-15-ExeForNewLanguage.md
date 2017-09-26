@@ -923,11 +923,11 @@ Is there something called "namespace / package / module" supported by your langu
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Operator_overloading):
 
-> In programming, operator overloading, sometimes termed operator ad hoc polymorphism, is a specific case of polymorphism, where different operators have different implementations depending on their arguments. Operator overloading is generally defined by a programming language, a programmer, or both.
+> In programming, **operator overloading**, sometimes termed operator ad hoc polymorphism, is a specific case of polymorphism, where different operators have different implementations depending on their arguments. Operator overloading is generally defined by a programming language, a programmer, or both.
 
-> Operator overloading is syntactic sugar (in computer science, syntactic sugar is syntax within a programming language that is designed to make things easier to read or to express), and is used because it allows programming using notation nearer to the target domain and allows user-defined types a similar level of syntactic support as types built into a language. It is common, for example, in scientific computing, where it allows computing representations of mathematical objects to be manipulated with the 
-same syntax as on paper.  
-
+> [...]
+> In computer science, **syntactic sugar** is syntax within a programming language that is designed to make things easier to read or to express. Operator overloading is syntactic sugar and is used because it allows programming using notation nearer to the target domain and allows user-defined types a similar level of syntactic support as types built into a language. It is common, for example, in scientific computing, where it allows computing representations of mathematical objects to be manipulated with the same syntax as on paper.  
+> [...]
 > Operator overloading does not change the expressive power of a language (with functions), as it can be emulated using function calls. For example, consider variables a, b, c of some user-defined type, such as matrices:  
 a + b * c  
 
@@ -940,7 +940,7 @@ In Python operators are overloadable by the programmer and they are limited to a
 
 Read these:
 1) https://docs.python.org/3/reference/datamodel.html#special-method-names
-2) http://blog.teamtreehouse.com/operator-overloading-python
+2) http://blog.teamtreehouse.com/operator-overloading-python > https://gist.github.com/kennethlove/56dfeb0d09c52bb4d812
 3) https://www.programiz.com/python-programming/operator-overloading
 4) http://thepythonguru.com/python-operator-overloading/
 
@@ -949,9 +949,9 @@ Read these:
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Virtual_function):
 
-> In object-oriented programming, in languages such as C++, a virtual function or virtual method is an inheritable and overridable function or method for which dynamic dispatch is facilitated. This concept is an important part of the (runtime) polymorphism portion of object-oriented programming (OOP).
+> In object-oriented programming, in languages such as C++, a **virtual function** or **virtual method** is an inheritable and overridable function or method for which dynamic dispatch is facilitated. This concept is an important part of the (runtime) polymorphism portion of object-oriented programming (OOP).
 
-> For example, a base class Animal could have a virtual function eat. Subclass Llama would implement eat() differently than subclass Wolf, but one can invoke eat() on any class instance referred to as Animal, and get the eat() behaviour of the specific subclass.
+> For example, a base class Animal could have a virtual function _eat_. Subclass Llama would implement eat() differently than subclass Wolf, but one can invoke eat() on any class instance referred to as Animal, and get the eat() behaviour of the specific subclass.
 
 ```c++
 class Animal {
@@ -975,16 +975,34 @@ public:
 Read these:
 1) https://stackoverflow.com/questions/4714136/how-to-implement-virtual-methods-in-python
 2) http://inspirated.com/2009/05/03/all-methods-in-python-are-effectively-virtual
-3) http://legacy.python.org/workshops/1998-11/proceedings/papers/lowis/lowis.html
-4) https://docs.python.org/3/library/abc.html
+3) https://docs.python.org/3/library/abc.html
+4) http://www.jitendrazaa.com/blog/java/virtual-function-in-java/
 5) https://bytes.com/topic/python/answers/23259-can-i-implement-virtual-functions-python
-6) https://www.thecodingforums.com/threads/pure-virtual-functions-in-python.715581/
+
+> Virtual functions (using C++ terminology) are something limited to
+statically-typed languages. A virtual function call will be resolved
+dynamically, based on the runtime type of the object. A non-virtual
+call will be resolved at compile-time, based on the declared type of
+the object. Since Python is dynamically typed, the only possibility
+is for all methods to be "virtual".
 
 **15.3) References**
+
+Read these:
+
+1) https://stackoverflow.com/questions/986006/how-do-i-pass-a-variable-by-reference
+2) https://jeffknupp.com/blog/2012/11/13/is-python-callbyvalue-or-callbyreference-neither/
+3) http://stupidpythonideas.blogspot.com.au/2013/11/does-python-pass-by-value-or-by.html
+4) http://interactivepython.org/runestone/static/thinkcspy/Lists/ObjectsandReferences.html
+5) http://scottlobdell.me/2013/08/understanding-python-variables-as-pointers/
+6) https://hbfs.wordpress.com/2011/06/14/python-references-vs-c-and-c/
+
 
 
 **15.4) Pointers**
 
+1) http://inspirated.com/2009/05/03/all-methods-in-python-are-effectively-virtual
+> Python does not even have pointers
 
 **15.5) namespace / package / module** 
 
