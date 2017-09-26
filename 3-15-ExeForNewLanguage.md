@@ -988,6 +988,9 @@ is for all methods to be "virtual".
 
 **15.3) References**
 
+wikipedia
+https://en.wikipedia.org/wiki/Reference_type
+
 Read these:
 
 1) https://stackoverflow.com/questions/986006/how-do-i-pass-a-variable-by-reference
