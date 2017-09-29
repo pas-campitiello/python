@@ -986,10 +986,17 @@ call will be resolved at compile-time, based on the declared type of
 the object. Since Python is dynamically typed, the only possibility
 is for all methods to be "virtual".
 
-**15.3) References**
+**15.3) References and Pointers**
 
-wikipedia
-https://en.wikipedia.org/wiki/Reference_type
+From Wikipedia (https://en.wikipedia.org/wiki/Reference_type):
+> In programming language theory, a reference type is a data type that refers to an object in memory. A pointer type on the other hand refers to a memory address. Reference types can be thought of as pointers that are implicitly dereferenced.[1] The objects being referred to are dynamically allocated on the heap whereas value types are allocated automatically on the stack. In languages supporting garbage collection the objects being referred to are destroyed automatically after they become unreachable.
+
+and also (https://en.wikipedia.org/wiki/Pointer_(computer_programming)):
+> In computer science, a pointer is a programming language object, whose value refers to (or "points to") another value stored elsewhere in the computer memory using its memory address. A pointer references a location in memory, and obtaining the value stored at that location is known as dereferencing the pointer.
+
+Confusing but to get an easy example see here:
+![alt text](http://assets.iosappsdev.org/objective-c/tutorials/objective-c/media/c-basics/pointers.png "Pointer vs References")
+
 
 Read these:
 
@@ -999,13 +1006,10 @@ Read these:
 4) http://interactivepython.org/runestone/static/thinkcspy/Lists/ObjectsandReferences.html
 5) http://scottlobdell.me/2013/08/understanding-python-variables-as-pointers/
 6) https://hbfs.wordpress.com/2011/06/14/python-references-vs-c-and-c/
-
-
-
-**15.4) Pointers**
-
-1) http://inspirated.com/2009/05/03/all-methods-in-python-are-effectively-virtual
+7) http://inspirated.com/2009/05/03/all-methods-in-python-are-effectively-virtual
 > Python does not even have pointers
+
+
 
 **15.5) namespace / package / module** 
 
