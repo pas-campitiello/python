@@ -1015,11 +1015,11 @@ Read these:
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Namespace):
 > In computing, a namespace is a set of symbols that are used to organize objects of various kinds, so that these objects may be referred to by name. Prominent examples include:
-- file systems are namespaces that assign names to files;[1]
-- some programming languages organize their variables and subroutines in namespaces;[2][3][4]
+- file systems are namespaces that assign names to files;
+- some programming languages organize their variables and subroutines in namespaces;
 - computer networks and distributed systems assign names to resources, such as computers, printers, websites, (remote) files, etc.
 
-> For many programming languages, namespace is a context for their identifiers. In an operating system, an example of namespace is a directory. Each name in a directory uniquely identifies one file or subdirectory, but one file may have the same name multiple times.[9]
+> For many programming languages, namespace is a context for their identifiers. In an operating system, an example of namespace is a directory. Each name in a directory uniquely identifies one file or subdirectory, but one file may have the same name multiple times.
 
 > As a rule, names in a namespace cannot have more than one meaning; that is, different meanings cannot share the same name in the same namespace. A namespace is also called a context, because the same name in different namespaces can have different meanings, each one appropriate for its namespace.
 
@@ -1030,7 +1030,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Namespace):
 
 > In some programming languages (e.g. C++, Python), the identifiers naming namespaces are themselves associated with an enclosing namespace. Thus, in these languages namespaces can nest, forming a namespace tree. At the root of this tree is the unnamed global namespace.
 
-> In Python, namespaces are defined by the individual modules, and since modules can be contained in hierarchical packages, then name spaces are hierarchical too.[12][13] In general when a module is imported then the names defined in the module are defined via that module's name space, and are accessed in from the calling modules by using the fully qualified name.
+> In Python, namespaces are defined by the individual modules, and since modules can be contained in hierarchical packages, then name spaces are hierarchical too. In general when a module is imported then the names defined in the module are defined via that module's name space, and are accessed in from the calling modules by using the fully qualified name.
 
 ```python
 # assume modulea defines two functions : func1() and func2() and one class : class1
@@ -1073,7 +1073,7 @@ Read these:
 
 **15.5) name mangling**
 
-From [Wikipedia](https://en.wikipedia.org/wiki/Name_mangling]:
+From [Wikipedia](https://en.wikipedia.org/wiki/Name_mangling):
 > In compiler construction, name mangling (also called name decoration) is a technique used to solve various problems caused by the need to resolve unique names for programming entities in many modern programming languages.
 It provides a way of encoding additional information in the name of a function, structure, class or another datatype in order to pass more semantic information from the compilers to linkers.
 The need arises where the language allows different entities to be named with the same identifier as long as they occupy a different namespace (where a namespace is typically defined by a module, class, or explicit namespace directive) or have different signatures (such as function overloading).
