@@ -1021,9 +1021,9 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Namespace):
 
 > For many programming languages, namespace is a context for their identifiers. In an operating system, an example of namespace is a directory. Each name in a directory uniquely identifies one file or subdirectory, but one file may have the same name multiple times.[9]
 
-As a rule, names in a namespace cannot have more than one meaning; that is, different meanings cannot share the same name in the same namespace. A namespace is also called a context, because the same name in different namespaces can have different meanings, each one appropriate for its namespace.
+> As a rule, names in a namespace cannot have more than one meaning; that is, different meanings cannot share the same name in the same namespace. A namespace is also called a context, because the same name in different namespaces can have different meanings, each one appropriate for its namespace.
 
-Following are other characteristics of namespaces:
+> Following are other characteristics of namespaces:
 - Names in the namespace can represent objects as well as concepts, be the namespace a natural or ethnic language, a constructed language, the technical terminology of a profession, a dialect, a sociolect, or an artificial language (e.g., a programming language).
 - In the Java programming language, identifiers that appear in namespaces have a short (local) name and a unique long "qualified" name for use outside the namespace.
 - Some compilers (for languages such as C++) combine namespaces and names for internal use in the compiler in a process called name mangling.
