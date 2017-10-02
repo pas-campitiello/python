@@ -989,16 +989,19 @@ is for all methods to be "virtual".
 **15.3) References and Pointers**
 
 From Wikipedia (https://en.wikipedia.org/wiki/Reference_type):
-> In programming language theory, a reference type is a data type that refers to an object in memory. A pointer type on the other hand refers to a memory address. Reference types can be thought of as pointers that are implicitly dereferenced.[1] The objects being referred to are dynamically allocated on the heap whereas value types are allocated automatically on the stack. In languages supporting garbage collection the objects being referred to are destroyed automatically after they become unreachable.
+> In programming language theory, a reference type is a data type that refers to an object in memory. A pointer type on the other hand refers to a memory address. Reference types can be thought of as pointers that are implicitly dereferenced. The objects being referred to are dynamically allocated on the heap whereas value types are allocated automatically on the stack. In languages supporting garbage collection the objects being referred to are destroyed automatically after they become unreachable.
+> In Python, classes—including immutable booleans, immutable integer numbers, immutable floating-point numbers, immutable complex numbers, immutable strings, byte strings, immutable byte strings, immutable tuples, immutable ranges, immutable memory views, lists, dictionaries, sets, immutable sets—are reference types.
 
 and also (https://en.wikipedia.org/wiki/Pointer_(computer_programming)):
 > In computer science, a pointer is a programming language object, whose value refers to (or "points to") another value stored elsewhere in the computer memory using its memory address. A pointer references a location in memory, and obtaining the value stored at that location is known as dereferencing the pointer.
 
-Confusing but to get an easy example see here:
+It can be confusing but to get an easy example see here:  
 ![alt text](http://assets.iosappsdev.org/objective-c/tutorials/objective-c/media/c-basics/pointers.png "Pointer vs References")
 
-
 Read these:
+
+1) https://rosettacode.org/wiki/Pointers_and_references#Python
+> Python does not have pointers and all Python names (variables) are implicitly references to objects. Python is a late-binding dynamic language in which "variables" are untyped bindings to objects.
 
 1) https://stackoverflow.com/questions/986006/how-do-i-pass-a-variable-by-reference
 2) https://jeffknupp.com/blog/2012/11/13/is-python-callbyvalue-or-callbyreference-neither/
@@ -1006,20 +1009,91 @@ Read these:
 4) http://interactivepython.org/runestone/static/thinkcspy/Lists/ObjectsandReferences.html
 5) http://scottlobdell.me/2013/08/understanding-python-variables-as-pointers/
 6) https://hbfs.wordpress.com/2011/06/14/python-references-vs-c-and-c/
-7) http://inspirated.com/2009/05/03/all-methods-in-python-are-effectively-virtual
-> Python does not even have pointers
+7) http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html#other-languages-have-variables
 
+**15.4) namespace / package / module** 
 
+From [Wikipedia](https://en.wikipedia.org/wiki/Namespace):
+> In computing, a namespace is a set of symbols that are used to organize objects of various kinds, so that these objects may be referred to by name. Prominent examples include:
+- file systems are namespaces that assign names to files;[1]
+- some programming languages organize their variables and subroutines in namespaces;[2][3][4]
+- computer networks and distributed systems assign names to resources, such as computers, printers, websites, (remote) files, etc.
 
-**15.5) namespace / package / module** 
+> For many programming languages, namespace is a context for their identifiers. In an operating system, an example of namespace is a directory. Each name in a directory uniquely identifies one file or subdirectory, but one file may have the same name multiple times.[9]
 
-See here:
-1) https://www.programiz.com/python-programming/namespace
+As a rule, names in a namespace cannot have more than one meaning; that is, different meanings cannot share the same name in the same namespace. A namespace is also called a context, because the same name in different namespaces can have different meanings, each one appropriate for its namespace.
 
+Following are other characteristics of namespaces:
+- Names in the namespace can represent objects as well as concepts, be the namespace a natural or ethnic language, a constructed language, the technical terminology of a profession, a dialect, a sociolect, or an artificial language (e.g., a programming language).
+- In the Java programming language, identifiers that appear in namespaces have a short (local) name and a unique long "qualified" name for use outside the namespace.
+- Some compilers (for languages such as C++) combine namespaces and names for internal use in the compiler in a process called name mangling.
 
-**15.6) name mangling**
+> In some programming languages (e.g. C++, Python), the identifiers naming namespaces are themselves associated with an enclosing namespace. Thus, in these languages namespaces can nest, forming a namespace tree. At the root of this tree is the unnamed global namespace.
 
+> In Python, namespaces are defined by the individual modules, and since modules can be contained in hierarchical packages, then name spaces are hierarchical too.[12][13] In general when a module is imported then the names defined in the module are defined via that module's name space, and are accessed in from the calling modules by using the fully qualified name.
 
 ```python
+# assume modulea defines two functions : func1() and func2() and one class : class1
+import modulea
 
+modulea.func1()
+modulea.func2()
+a = modulea.class1()
 ```
+
+> The "from ... import ..." can be used to insert the relevant names directly into the calling module's namespace, and those names can be accessed from the calling module without the qualified name:
+
+```python
+# assume modulea defines two functions : func1() and func2() and one class : class1
+from modulea import func1
+
+func1()
+func2() # this will fail as an undefined name, as will the full name modulea.func2()
+a = class1() # this will fail as an undefined name, as will the full name modulea.class1()
+```
+
+> Since this directly imports names (without qualification) it can overwrite existing names with no warnings.
+
+> A special form is "from ... import *", which imports all names defined in the named package directly in the calling modules namespace. Use of this form of import, although supported within the language, is generally discouraged as it pollutes the namespace of the calling module and will cause already defined names to be overwritten in the case of name clashes.
+Python also supports "import x as y" as a way of providing an alias or alternative name for use by the calling module:
+
+```python
+import numpy as np
+a = np.arange(1000)
+```
+
+Read these:
+
+1) https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces
+2) https://www.programiz.com/python-programming/namespace 
+3) https://docs.python.org/3/tutorial/modules.html
+4) https://docs.python.org/3/tutorial/modules.html#packages
+5) http://www.network-theory.co.uk/docs/pytut/Packages.html
+6) https://stackoverflow.com/questions/7948494/whats-the-difference-between-a-python-module-and-a-python-package
+
+**15.5) name mangling**
+
+From [Wikipedia](https://en.wikipedia.org/wiki/Name_mangling]:
+> In compiler construction, name mangling (also called name decoration) is a technique used to solve various problems caused by the need to resolve unique names for programming entities in many modern programming languages.
+It provides a way of encoding additional information in the name of a function, structure, class or another datatype in order to pass more semantic information from the compilers to linkers.
+The need arises where the language allows different entities to be named with the same identifier as long as they occupy a different namespace (where a namespace is typically defined by a module, class, or explicit namespace directive) or have different signatures (such as function overloading).
+Any object code produced by compilers is usually linked with other pieces of object code (produced by the same or another compiler) by a type of program called a linker. The linker needs a great deal of information on each program entity. For example, to correctly link a function it needs its name, the number of arguments and their types, and so on.
+
+> In Python, mangling is used for "private" class members which are designated as such by giving them a name with two leading underscores and no more than one trailing underscore. For example, __thing will be mangled, as will ___thing and __thing_, but __thing__ and __thing___ will not. Python's runtime does not restrict access to such members, the mangling only prevents name collisions if a derived class defines a member with the same name.
+
+On encountering name mangled attributes, Python transforms these names by a single underscore and the name of the enclosing class, for example:
+
+```python
+>>> class Test(object):
+...     def __mangled_name(self):
+...         pass
+...     def normal_name(self):
+...         pass
+>>> t = Test()
+>>> [attr for attr in dir(t) if 'name' in attr]
+['_Test__mangled_name', 'normal_name']
+```
+
+Read these:
+1) https://docs.python.org/3/tutorial/classes.html#private-variables
+2) https://hackernoon.com/understanding-the-underscore-of-python-309d1a029edc
