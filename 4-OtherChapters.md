@@ -14,7 +14,7 @@ https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions
 ```python
 ```
 
-## 5.1.4. Nested List Comprehensions¶
+## 5.1.4. Nested List Comprehensions
 https://docs.python.org/3/tutorial/datastructures.html#nested-list-comprehensions
 
 
@@ -42,31 +42,57 @@ https://docs.python.org/3/tutorial/datastructures.html#comparing-sequences-and-o
 
 
 
-## The dir function
+## 6.3. The dir() Function
 https://docs.python.org/3/tutorial/modules.html#the-dir-function
 
 ```python
 ```
 
-## More on Input and Output
-https://docs.python.org/3/tutorial/inputoutput.html#input-and-output
+## 7.1 Fancier Output Formatting
+https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting
 
 ```python
 ```
 
-## Classes
-https://docs.python.org/3/tutorial/classes.html
+## 7.2.2. Saving structured data with json
+https://docs.python.org/3/tutorial/inputoutput.html#saving-structured-data-with-json
 
 ```python
 ```
 
-## Brief Tour of the Standard Library
+
+## 9.3 A first look at classes
+https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes
+
+```python
+```
+
+## 9.4 Random remarks
+https://docs.python.org/3/tutorial/classes.html#random-remarks
+
+
+## 9.5 Inheritance
+https://docs.python.org/3/tutorial/classes.html#inheritance
+
+## 9.6 Private variables
+https://docs.python.org/3/tutorial/classes.html#private-variables
+
+## 9.7 Odds and Ends
+https://docs.python.org/3/tutorial/classes.html#odds-and-ends
+
+## 9.8-9-10 Iterators and Generators
+https://docs.python.org/3/tutorial/classes.html#iterators
+https://docs.python.org/3/tutorial/classes.html#generators
+https://docs.python.org/3/tutorial/classes.html#generator-expressions
+
+
+## 10. Brief Tour of the Standard Library
 https://docs.python.org/3/tutorial/stdlib.html
 
 ```python
 ```
 
-## Brief Tour of the Standard Library II
+## 11. Brief Tour of the Standard Library II
 https://docs.python.org/3/tutorial/stdlib2.html
 
 ```python
