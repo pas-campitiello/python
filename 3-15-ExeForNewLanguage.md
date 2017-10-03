@@ -1131,6 +1131,8 @@ On encountering name mangled attributes, Python transforms these names by a sing
 >>> [attr for attr in dir(t) if 'name' in attr]
 ['_Test__mangled_name', 'normal_name']
 ```
+See [here](https://docs.python.org/2/library/functions.html#dir) for **dir()**.
+
 
 Read these:
 1) https://docs.python.org/3/tutorial/classes.html#private-variables
