@@ -187,6 +187,44 @@ def F(n):
 print(F(10))
 ```
 
+Another interesting example showing the usage of modules and some implemetations of Fibonacci functions is here: https://docs.python.org/3/tutorial/modules.html
+
+> For instance, use your favorite text editor to create a file called fibo.py in the current directory with the following contents:
+
+```python
+# Fibonacci numbers module
+
+def fib(n):    # write Fibonacci series up to n
+    a, b = 0, 1
+    while b < n:
+        print(b, end=' ')
+        a, b = b, a+b
+    print()
+
+def fib2(n):   # return Fibonacci series up to n
+    result = []
+    a, b = 0, 1
+    while b < n:
+        result.append(b)
+        a, b = b, a+b
+    return result
+```
+
+> Now enter the Python interpreter and import this module with the following command:
+```python
+>>> import fibo
+```
+
+> This does not enter the names of the functions defined in fibo directly in the current symbol table; it only enters the module name fibo there. Using the module name you can access the functions:
+```python
+>>> fibo.fib(1000)
+1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
+>>> fibo.fib2(100)
+[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+>>> fibo.__name__
+'fibo'
+```
+
 Find maximum and minimum elements in a list is as simple as this (see [built-in functions](https://docs.python.org/2/library/functions.html)):
 ```python
 numlist = [1,14,57,9,40,4,3,2,22,66,88,99,10]
@@ -207,6 +245,7 @@ print("List: ",numlist)
 print("Max: ",max(numlist))
 print("Min: ",min(numlist))
 ```
+
 
 ## Exercise 3
 Accepting series of numbers, strings from keyboard and sorting them ascending, descending order.
@@ -1068,8 +1107,7 @@ Read these:
 2) https://www.programiz.com/python-programming/namespace 
 3) https://docs.python.org/3/tutorial/modules.html
 4) https://docs.python.org/3/tutorial/modules.html#packages
-5) http://www.network-theory.co.uk/docs/pytut/Packages.html
-6) https://stackoverflow.com/questions/7948494/whats-the-difference-between-a-python-module-and-a-python-package
+5) https://stackoverflow.com/questions/7948494/whats-the-difference-between-a-python-module-and-a-python-package
 
 **15.5) name mangling**
 
