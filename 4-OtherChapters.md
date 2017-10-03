@@ -27,35 +27,88 @@ https://docs.python.org/3/library/functions.html#map
 https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions
 
 ```python
+print([x**2 for x in range(10)])
 
+print("--------------------")
+
+print([(x, y) for x in [1,2,3] for y in [3,1,4] if x != y])
+
+print("--------------------")
+
+combs = []
+for x in [1,2,3]:
+    for y in [3,1,4]:
+        if x != y:
+            combs.append((x, y))
+print(combs)
+
+print("--------------------")
+
+from math import pi
+print([str(round(pi, i)) for i in range(1, 6)])
 ```
 
 ## 5.1.4. Nested List Comprehensions
 https://docs.python.org/3/tutorial/datastructures.html#nested-list-comprehensions
 
+``` python
+
+```
 
 ## 5.2 The del statement
 https://docs.python.org/3/tutorial/datastructures.html#the-del-statement
+
+``` python
+
+```
 
 
 ## 5.3 Tuples and Sequences
 https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences
 
+``` python
+
+```
+
+
 ## 5.4 Sets
 https://docs.python.org/3/tutorial/datastructures.html#sets
+
+``` python
+
+```
+
 
 ## 5.5 Dictionaries
 https://docs.python.org/3/tutorial/datastructures.html#dictionaries
 
+``` python
+
+```
+
+
 ## 5.6 Looping techniques
 https://docs.python.org/3/tutorial/datastructures.html#looping-techniques
+
+``` python
+
+```
+
 
 ## 5.7 More on conditions
 https://docs.python.org/3/tutorial/datastructures.html#more-on-conditions
 
+``` python
+
+```
+
+
 ## 5.8. Comparing Sequences and Other Types
 https://docs.python.org/3/tutorial/datastructures.html#comparing-sequences-and-other-types
 
+``` python
+
+```
 
 
 ## 6.3. The dir() Function
