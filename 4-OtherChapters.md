@@ -5,13 +5,29 @@ Official tutorial: https://docs.python.org/3/tutorial/index.html
 ## 4.7.5 Lambda expressions
 https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions
 
+Probably the most useful way to exploit lambda functions is define them in-line and/or in small function as an argument:
+
 ```python
+pairs = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
+pairs.sort(key=lambda pair: pair[1])
+print(pairs)
 ```
+
+**list.sort()**
+https://docs.python.org/3/library/stdtypes.html#list.sort
+
+Key specifies a function of one argument that is used to extract a comparison key from each list element (for example, key=str.lower). The key corresponding to each item in the list is calculated once and then used for the entire sorting process. The default value of None means that list items are sorted directly without calculating a separate key value.
+
+**map()**
+https://docs.python.org/3/library/functions.html#map
+
+
 
 ## 5.1.3. List Comprehensions
 https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions
 
 ```python
+
 ```
 
 ## 5.1.4. Nested List Comprehensions
