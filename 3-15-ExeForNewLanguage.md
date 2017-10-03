@@ -1,5 +1,5 @@
 
-# 15 exercises for learning Python
+# 15 exercises learning Python
 Inspired by: http://www.ign.com/boards/threads/15-exercises-for-learning-a-new-programming-language.129542936/
 
 
