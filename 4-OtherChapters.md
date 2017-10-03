@@ -1,25 +1,46 @@
 # Other important things from the official tutorial
-https://docs.python.org/3/tutorial/index.html
+Official tutorial: https://docs.python.org/3/tutorial/index.html
 
 
-## Lambda expressions
+## 4.7.5 Lambda expressions
 https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions
 
 ```python
 ```
 
-## Function annotations
-https://docs.python.org/3/tutorial/controlflow.html#function-annotations
-
-```python
-
-```
-
-## More on data structures
-https://docs.python.org/3/tutorial/datastructures.html#
+## 5.1.3. List Comprehensions
+https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions
 
 ```python
 ```
+
+## 5.1.4. Nested List Comprehensions¶
+https://docs.python.org/3/tutorial/datastructures.html#nested-list-comprehensions
+
+
+## 5.2 The del statement
+https://docs.python.org/3/tutorial/datastructures.html#the-del-statement
+
+
+## 5.3 Tuples and Sequences
+https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences
+
+## 5.4 Sets
+https://docs.python.org/3/tutorial/datastructures.html#sets
+
+## 5.5 Dictionaries
+https://docs.python.org/3/tutorial/datastructures.html#dictionaries
+
+## 5.6 Looping techniques
+https://docs.python.org/3/tutorial/datastructures.html#looping-techniques
+
+## 5.7 More on conditions
+https://docs.python.org/3/tutorial/datastructures.html#more-on-conditions
+
+## 5.8. Comparing Sequences and Other Types
+https://docs.python.org/3/tutorial/datastructures.html#comparing-sequences-and-other-types
+
+
 
 ## The dir function
 https://docs.python.org/3/tutorial/modules.html#the-dir-function
