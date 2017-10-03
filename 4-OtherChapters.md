@@ -13,12 +13,12 @@ pairs.sort(key=lambda pair: pair[1])
 print(pairs)
 ```
 
-**list.sort()**
+**list.sort()**  
 https://docs.python.org/3/library/stdtypes.html#list.sort
 
 Key specifies a function of one argument that is used to extract a comparison key from each list element (for example, key=str.lower). The key corresponding to each item in the list is calculated once and then used for the entire sorting process. The default value of None means that list items are sorted directly without calculating a separate key value.
 
-**map()**
+**map()**  
 https://docs.python.org/3/library/functions.html#map
 
 
