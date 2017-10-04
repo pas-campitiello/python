@@ -8,19 +8,22 @@ https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions
 Probably the most useful way to exploit lambda functions is define them in-line and/or in small function as an argument:
 
 ```python
+# It sorts the list of pairs using as key the second value of each pair.
+
 pairs = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
 pairs.sort(key=lambda pair: pair[1])
 print(pairs)
+
+# It creates a list of squares until 10
+print(list(map(lambda x: x**2, range(10))))
 ```
 
-**list.sort()**  
-https://docs.python.org/3/library/stdtypes.html#list.sort
+**list.sort()** - https://docs.python.org/3/library/stdtypes.html#list.sort  
 
 Key specifies a function of one argument that is used to extract a comparison key from each list element (for example, key=str.lower). The key corresponding to each item in the list is calculated once and then used for the entire sorting process. The default value of None means that list items are sorted directly without calculating a separate key value.
 
-**map()**  
-https://docs.python.org/3/library/functions.html#map
-
+**map(function, iterable, …)** - https://docs.python.org/3/library/functions.html#map  
+Return an iterator that applies function to every item of iterable, yielding the results. 
 
 
 ## 5.1.3. List Comprehensions
@@ -82,8 +85,11 @@ print("Transposed again: ", transposedAgain)
 print("----------------------")
 print("Transposed using zip(): ", list(zip(*matrix)))
 ```
-**zip()**  
+**zip(\*iterables)**  
 https://docs.python.org/3/library/functions.html#zip
+
+Make an iterator that aggregates elements from each of the iterables.
+Returns an iterator of tuples, where the i-th tuple contains the i-th element from each of the argument sequences or iterables. The iterator stops when the shortest input iterable is exhausted. With a single iterable argument, it returns an iterator of 1-tuples. With no arguments, it returns an empty iterator.
 
 
 ## 5.2 The del statement
