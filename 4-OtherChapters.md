@@ -85,6 +85,7 @@ print("Transposed again: ", transposedAgain)
 print("----------------------")
 print("Transposed using zip(): ", list(zip(*matrix)))
 ```
+
 **zip(\*iterables)**  
 https://docs.python.org/3/library/functions.html#zip
 
@@ -92,29 +93,35 @@ Make an iterator that aggregates elements from each of the iterables.
 Returns an iterator of tuples, where the i-th tuple contains the i-th element from each of the argument sequences or iterables. The iterator stops when the shortest input iterable is exhausted. With a single iterable argument, it returns an iterator of 1-tuples. With no arguments, it returns an empty iterator.
 
 
-## 5.2 The del statement
-https://docs.python.org/3/tutorial/datastructures.html#the-del-statement
-
-``` python
-
-```
-
-
-## 5.3 Tuples and Sequences
-https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences
-
-``` python
-
-```
-
-
 ## 5.4 Sets
 https://docs.python.org/3/tutorial/datastructures.html#sets
 
 ``` python
+basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
+print(basket)   # show that duplicates have been removed
 
+print("'orange' in basket?    -", 'orange' in basket)
+print("'crabgrass' in basket? -", 'crabgrass' in basket)
+
+print("----------------------")
+
+# Demonstrate set operations on unique letters from two words
+a = set('abracadabra')
+b = set('alacazam')
+
+print("a = ", a)        # unique letters in a
+print("b = ", b)        # unique letters in b
+
+print("a - b =", a - b)   # letters in a but not in b
+print("a | b =", a | b)   # letters in a or b or both
+print("a & b =", a & b)   # letters in both a and b
+print("a ^ b =", a ^ b)   # letters in a or b but not both
+
+#Similarly to list comprehensions, set comprehensions are also supported:
+print("----------------------")
+a = {x for x in 'abracadabra' if x not in 'abc'}
+print(a)
 ```
-
 
 ## 5.5 Dictionaries
 https://docs.python.org/3/tutorial/datastructures.html#dictionaries
