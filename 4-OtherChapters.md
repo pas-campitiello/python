@@ -174,17 +174,30 @@ Return a new view of the dictionary’s items ((key, value) pairs). See the docu
 Return an enumerate object. iterable must be a sequence, an iterator, or some other object which supports iteration. The \_\_next\_\_() method of the iterator returned by enumerate() returns a tuple containing a count (from start which defaults to 0) and the values obtained from iterating over iterable.
 
 ``` python
+knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+for k, v in knights.items():
+    print(k, v)
 
+print("--------------------------------------------------")
+for i, v in enumerate(['tic', 'tac', 'toe']):
+     print(i, v)
+
+print("--------------------------------------------------")
+questions = ['name', 'quest', 'favorite color']
+answers = ['lancelot', 'the holy grail', 'blue']
+for q, a in zip(questions, answers):
+     print('What is your {0}?  It is {1}.'.format(q, a))
+
+print("--------------------------------------------------")
+
+import math
+raw_data = [56.2, float('NaN'), 51.7, 55.3, 52.5, float('NaN'), 47.8]
+filtered_data = []
+for value in raw_data:
+     if not math.isnan(value):
+         filtered_data.append(value)
+print(filtered_data)
 ```
-
-
-## 5.7 More on conditions
-https://docs.python.org/3/tutorial/datastructures.html#more-on-conditions
-
-``` python
-
-```
-
 
 ## 5.8. Comparing Sequences and Other Types
 https://docs.python.org/3/tutorial/datastructures.html#comparing-sequences-and-other-types
