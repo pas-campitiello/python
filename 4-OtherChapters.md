@@ -126,13 +126,52 @@ print(a)
 ## 5.5 Dictionaries
 https://docs.python.org/3/tutorial/datastructures.html#dictionaries
 
+Unlike sequences, which are indexed by a range of numbers, dictionaries are indexed by keys, which can be any immutable type; strings and numbers can always be keys. Tuples can be used as keys if they contain only strings, numbers, or tuples; if a tuple contains any mutable object either directly or indirectly, it cannot be used as a key. 
+
+It is best to think of a dictionary as an unordered set of key: value pairs, with the requirement that the keys are unique (within one dictionary). A pair of braces creates an empty dictionary: {}. Placing a comma-separated list of key:value pairs within the braces adds initial key:value pairs to the dictionary; this is also the way dictionaries are written on output.
+
+https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
+
+A mapping object maps hashable values to arbitrary objects. Mappings are mutable objects. There is currently only one standard mapping type, the dictionary.
+
 ``` python
+tel = {'jack': 4098, 'sape': 4139}
+tel['guido'] = 4127
+print(tel)
+print(tel['jack'])
 
+del tel['sape']
+tel['irv'] = 4127
+print(tel)
+
+print("---------------------------------")
+
+print(list(tel.keys()))
+print(sorted(tel.keys()))
+
+print("'guido' in tel? -", 'guido' in tel)
+print("'jack' not in tel? -", 'jack' not in tel)
+
+print("---------------------------------")
+
+# The dict() constructor builds dictionaries directly from sequences of key-value pairs:
+print(dict([('sape', 4139), ('guido', 4127), ('jack', 4098)]))
+
+# In addition, dict comprehensions can be used to create dictionaries from arbitrary key and value expressions:
+print({x: x**2 for x in (2, 4, 6)})
+
+# When the keys are simple strings, it is sometimes easier to specify pairs using keyword arguments:
+print(dict(sape=4139, guido=4127, jack=4098))
 ```
-
 
 ## 5.6 Looping techniques
 https://docs.python.org/3/tutorial/datastructures.html#looping-techniques
+
+**items()** - https://docs.python.org/3/library/stdtypes.html#dict.items
+Return a new view of the dictionary’s items ((key, value) pairs). See the documentation of view objects.
+
+**enumerate(iterable, start=0)** - https://docs.python.org/3/library/functions.html#enumerate
+Return an enumerate object. iterable must be a sequence, an iterator, or some other object which supports iteration. The \_\_next\_\_() method of the iterator returned by enumerate() returns a tuple containing a count (from start which defaults to 0) and the values obtained from iterating over iterable.
 
 ``` python
 
