@@ -230,9 +230,9 @@ print("(1, 2, ('aa', 'ab'))     < (1, 2, ('abc', 'a'), 4) ?", (1, 2, ('aa', 'ab'
 https://docs.python.org/3/tutorial/modules.html#the-dir-function
 https://docs.python.org/3/library/functions.html#dir
 
-The built-in function dir() is used to find out which names a module defines. It returns a sorted list of strings.
+The built-in function **dir()** is used to find out which names a module defines. It returns a sorted list of strings.
 
-Without arguments, dir() lists the names you have defined currently.
+Without arguments, **dir()** lists the names you have defined currently.
 
 **dir()** does not list the names of built-in functions and variables. If you want a list of those, they are defined in the standard module _builtins_.
 
@@ -245,17 +245,45 @@ print()
 print(dir(builtins))
 ```
 
-
 ## 7.1 Fancier Output Formatting
 https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting
 
 ```python
+print("^1".rjust(2), "^2".rjust(3), "^3".rjust(4))
+print("------------------------------")
+for x in range(1, 11):
+    print(repr(x).rjust(2), repr(x*x).rjust(3), end=' ')
+    # Note use of 'end' on previous line
+    print(repr(x*x*x).rjust(4))
+
+print()
+
+for x in range(1, 11):
+    print('{0:2d} {1:3d} {2:4d}'.format(x, x*x, x*x*x))
+
+# '!a' (apply ascii()), '!s' (apply str()) and '!r' (apply repr()) can be used to convert the value before it is formatted:
+print()
+contents = 'eels'
+print('My hovercraft is full of {}.'.format(contents))
+print('My hovercraft is full of {!a}.'.format(contents))
+print('My hovercraft is full of {!s}.'.format(contents))
+print('My hovercraft is full of {!r}.'.format(contents))
+
+# Passing an integer after the ':' will cause that field to be a minimum number of characters wide. This is useful for making tables pretty.
+print()
+table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 7678}
+for name, phone in table.items():
+    print('{0:10} ==> {1:10d}'.format(name, phone))
 ```
 
 ## 7.2.2. Saving structured data with json
 https://docs.python.org/3/tutorial/inputoutput.html#saving-structured-data-with-json
+https://docs.python.org/3/library/json.html#module-json
+
+Rather than having users constantly writing and debugging code to save complicated data types to files, Python allows you to use the popular data interchange format called JSON (JavaScript Object Notation). The standard module called json can take Python data hierarchies, and convert them to string representations; this process is called _serializing_. Reconstructing the data from the string representation is called _deserializing_. 
 
 ```python
+
 ```
 
 
@@ -263,6 +291,21 @@ https://docs.python.org/3/tutorial/inputoutput.html#saving-structured-data-with-
 https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes
 
 ```python
+import json
+
+x = [1, 'simple', 'list', ('aa','bb')]
+print(json.dumps(x))
+
+f = open("contentfile.txt", "w")
+# note json.dump not dumps
+json.dump(x,f)
+f.close()
+
+f = open("contentfile.txt", "r")
+readContent = json.load(f)
+f.close()
+
+print(readContent)
 ```
 
 ## 9.4 Random remarks
