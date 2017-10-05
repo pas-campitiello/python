@@ -283,14 +283,6 @@ https://docs.python.org/3/library/json.html#module-json
 Rather than having users constantly writing and debugging code to save complicated data types to files, Python allows you to use the popular data interchange format called JSON (JavaScript Object Notation). The standard module called json can take Python data hierarchies, and convert them to string representations; this process is called _serializing_. Reconstructing the data from the string representation is called _deserializing_. 
 
 ```python
-
-```
-
-
-## 9.3 A first look at classes
-https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes
-
-```python
 import json
 
 x = [1, 'simple', 'list', ('aa','bb')]
@@ -306,6 +298,14 @@ readContent = json.load(f)
 f.close()
 
 print(readContent)
+```
+
+
+## 9.3 A first look at classes
+https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes
+
+```python
+
 ```
 
 ## 9.4 Random remarks
