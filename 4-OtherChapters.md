@@ -202,16 +202,49 @@ print(filtered_data)
 ## 5.8. Comparing Sequences and Other Types
 https://docs.python.org/3/tutorial/datastructures.html#comparing-sequences-and-other-types
 
+The comparison uses lexicographical ordering: first the first two items are compared, and if they differ this determines the outcome of the comparison; if they are equal, the next two items are compared, and so on, until either sequence is exhausted. If two items to be compared are themselves sequences of the same type, the lexicographical comparison is carried out recursively.
+
+Comparison is performed in couples, if the items in a couple differ the comparison stops immediately and there is an outcome.
+
 ``` python
-
+print("(1, 2, 4)                < (1, 2, 4)               ?", (1, 2, 4) < (1, 2, 4))
+print("[1, 2, 3]                < [1, 2, 4]               ?", [1, 2, 3] < [1, 2, 4])
+print("[9, 2, 3]                < [1, 2, 4]               ?", [9, 2, 3] < [1, 2, 4])
+print("(1, 2, 3)                == (1.0, 2.0, 3.0)        ?", (1, 2, 3) == (1.0, 2.0, 3.0))
+print()
+print("'ABC' < 'C' < 'Pascal'   < 'Python'                ?", 'ABC' < 'C' < 'Pascal' < 'Python')                 # alphabetical order
+print()
+# Comparison is performed in couples, if the items in a couple differ the comparisnn stops immediately and there is an outcome.
+print("(1, 2, 3, 4)             < (1, 2, 4)               ?", (1, 2, 3, 4) < (1, 2, 4))                          # problem here
+print()
+# If one sequence is an initial sub-sequence of the other, the shorter sequence is the smaller (lesser) one.")
+print("(1, 2)                   < (1, 2, -1)              ?", (1, 2) < (1, 2, -1))
+print()
+print("('aa')                   < ('abc')                 ?", ('aa') < ('abc'))
+print("('aa', 'ab')             < ('abc', 'a')            ?", ('aa', 'ab') < ('abc', 'a'))
+print()
+print("(1, 2, ('aa', 'ab'))     < (1, 2, ('abc', 'a'), 4) ?", (1, 2, ('aa', 'ab')) < (1, 2, ('abc', 'a'), 4))
 ```
-
 
 ## 6.3. The dir() Function
 https://docs.python.org/3/tutorial/modules.html#the-dir-function
+https://docs.python.org/3/library/functions.html#dir
+
+The built-in function dir() is used to find out which names a module defines. It returns a sorted list of strings.
+
+Without arguments, dir() lists the names you have defined currently.
+
+**dir()** does not list the names of built-in functions and variables. If you want a list of those, they are defined in the standard module _builtins_.
 
 ```python
+import time, builtins
+print(dir(time))
+print()
+print(dir())
+print()
+print(dir(builtins))
 ```
+
 
 ## 7.1 Fancier Output Formatting
 https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting
