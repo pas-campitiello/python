@@ -381,8 +381,10 @@ class Reverse:
         return self.data[self.index]
 
 rev = Reverse('spam')
-print(rev)
+print(rev.__doc__)
 
+print()
+print(rev)
 iterator = iter(rev)
 print(iterator)
 
@@ -392,13 +394,34 @@ for char in rev:
     print(char)
 ```
 
-## 9.9-10 Generators and Generator Expressions
+## 9.9 Generators
 https://docs.python.org/3/tutorial/classes.html#generators  
-https://docs.python.org/3/tutorial/classes.html#generator-expressions
+
+Generators are a simple and powerful tool for creating iterators. They are written like regular functions but use the **yield** statement whenever they want to return data. Each time next() is called on it, the generator resumes where it left off (it remembers all the data values and which statement was last executed).
+
+Anything that can be done with generators can also be done with class-based iterators as described in the previous section. What makes generators so compact is that the **\_\_iter\_\_()** and **\_\_next\_\_()** methods are created automatically.
+
+Another key feature is that the local variables and execution state are automatically saved between calls. This made the function easier to write and much more clear than an approach using instance variables like self.index and self.data.
+
+In addition to automatic method creation and saving program state, when generators terminate, they automatically raise StopIteration. In combination, these features make it easy to create iterators with no more effort than writing a regular function.
+
+https://docs.python.org/3/glossary.html#term-generator
+
+A function which returns a generator iterator. It looks like a normal function except that it contains **yield** expressions for producing a series of values usable in a for-loop or that can be retrieved one at a time with the **next()** function.
+Usually refers to a generator function, but may refer to a generator iterator in some contexts. In cases where the intended meaning isn’t clear, using the full terms avoids ambiguity.
 
 ```python
+def reverse(data):
+    for index in range(len(data)-1, -1, -1):
+        yield data[index]
 
+for char in reverse('golf'):
+     print(char)
 ```
+
+## 9.10 Generator Expressions
+https://docs.python.org/3/tutorial/classes.html#generator-expressions
+
 
 ## 10. Brief Tour of the Standard Library
 https://docs.python.org/3/tutorial/stdlib.html
