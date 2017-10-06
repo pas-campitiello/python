@@ -343,19 +343,62 @@ class DerivedClassName(BaseClassName):
 ```
 The name BaseClassName must be defined in a scope containing the derived class definition.
 
+Python supports a form of multiple inheritance as well. A class definition with multiple base classes looks like this:
+```python
+class DerivedClassName(Base1, Base2, Base3):
+    <statement-1>
+    .
+    .
+    .
+    <statement-N>
+```
 
 ## 9.6 Private variables
 https://docs.python.org/3/tutorial/classes.html#private-variables
 
-## 9.7 Odds and Ends
-https://docs.python.org/3/tutorial/classes.html#odds-and-ends
+“Private” instance variables that cannot be accessed except from inside an object don’t exist in Python. However, there is a convention that is followed by most Python code: a name prefixed with an underscore (e.g. \_spam) should be treated as a non-public part of the API (whether it is a function, a method or a data member). It should be considered an implementation detail and subject to change without notice.
 
-## 9.8-9-10 Iterators and Generators
+Since there is a valid use-case for class-private members (namely to avoid name clashes of names with names defined by subclasses), there is limited support for such a mechanism, called name mangling. Any identifier of the form **\_\_spam** (at least two leading underscores, at most one trailing underscore) is textually replaced with **\_classname\_\_spam**, where **classname** is the current class name with leading underscore(s) stripped. This mangling is done without regard to the syntactic position of the identifier, as long as it occurs within the definition of a class.
+
+## 9.8 Iterators
 https://docs.python.org/3/tutorial/classes.html#iterators  
+https://docs.python.org/3/library/functions.html#iter
+
+```python
+class Reverse:
+    """Iterator for looping over a sequence backwards."""
+    def __init__(self, data):
+        self.data = data
+        self.index = len(data)
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.index == 0:
+            raise StopIteration
+        self.index = self.index - 1
+        return self.data[self.index]
+
+rev = Reverse('spam')
+print(rev)
+
+iterator = iter(rev)
+print(iterator)
+
+print()
+
+for char in rev:
+    print(char)
+```
+
+## 9.9-10 Generators and Generator Expressions
 https://docs.python.org/3/tutorial/classes.html#generators  
 https://docs.python.org/3/tutorial/classes.html#generator-expressions
 
+```python
 
+```
 
 ## 10. Brief Tour of the Standard Library
 https://docs.python.org/3/tutorial/stdlib.html
