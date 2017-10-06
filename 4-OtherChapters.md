@@ -304,16 +304,45 @@ print(readContent)
 ## 9.3 A first look at classes
 https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes
 
-```python
+Classes provide a means of bundling data and functionality together. Creating a new class creates a new type of object, allowing new instances of that type to be made. Each class instance can have attributes attached to it for maintaining its state. Class instances can also have methods (defined by its class) for modifying its state.
 
+Compared with other programming languages, Python’s class mechanism adds classes with a minimum of new syntax and semantics. It is a mixture of the class mechanisms found in C++ and Modula-3. Python classes provide all the standard features of Object Oriented Programming: the class inheritance mechanism allows multiple base classes, a derived class can override any methods of its base class or classes, and a method can call the method of a base class with the same name. Objects can contain arbitrary amounts and kinds of data. As is true for modules, classes partake of the dynamic nature of Python: they are created at runtime, and can be modified further after creation.
+
+The simplest form of class definition looks like this:
+```python
+class ClassName:
+    <statement-1>
+    .
+    .
+    .
+    <statement-N>
 ```
 
-## 9.4 Random remarks
-https://docs.python.org/3/tutorial/classes.html#random-remarks
+Example:
+```python
+class Complex:
+    def __init__(self, realpart, imagpart):
+        self.r = realpart
+        self.i = imagpart
 
+x = Complex(3.0, -4.5)
+print(x.r,"+ (", x.i,")*i")
+```
 
 ## 9.5 Inheritance
 https://docs.python.org/3/tutorial/classes.html#inheritance
+
+The syntax for a derived class definition looks like this:
+```python
+class DerivedClassName(BaseClassName):
+    <statement-1>
+    .
+    .
+    .
+    <statement-N>
+```
+The name BaseClassName must be defined in a scope containing the derived class definition.
+
 
 ## 9.6 Private variables
 https://docs.python.org/3/tutorial/classes.html#private-variables
@@ -322,9 +351,10 @@ https://docs.python.org/3/tutorial/classes.html#private-variables
 https://docs.python.org/3/tutorial/classes.html#odds-and-ends
 
 ## 9.8-9-10 Iterators and Generators
-https://docs.python.org/3/tutorial/classes.html#iterators
-https://docs.python.org/3/tutorial/classes.html#generators
+https://docs.python.org/3/tutorial/classes.html#iterators  
+https://docs.python.org/3/tutorial/classes.html#generators  
 https://docs.python.org/3/tutorial/classes.html#generator-expressions
+
 
 
 ## 10. Brief Tour of the Standard Library
