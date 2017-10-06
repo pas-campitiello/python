@@ -405,7 +405,7 @@ Another key feature is that the local variables and execution state are automati
 
 In addition to automatic method creation and saving program state, when generators terminate, they automatically raise StopIteration. In combination, these features make it easy to create iterators with no more effort than writing a regular function.
 
-https://docs.python.org/3/glossary.html#term-generator
+**generator** - https://docs.python.org/3/glossary.html#term-generator
 
 A function which returns a generator iterator. It looks like a normal function except that it contains **yield** expressions for producing a series of values usable in a for-loop or that can be retrieved one at a time with the **next()** function.
 Usually refers to a generator function, but may refer to a generator iterator in some contexts. In cases where the intended meaning isn’t clear, using the full terms avoids ambiguity.
@@ -418,10 +418,6 @@ def reverse(data):
 for char in reverse('golf'):
      print(char)
 ```
-
-## 9.10 Generator Expressions
-https://docs.python.org/3/tutorial/classes.html#generator-expressions
-
 
 ## 10. Brief Tour of the Standard Library
 https://docs.python.org/3/tutorial/stdlib.html
