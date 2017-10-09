@@ -570,6 +570,73 @@ unittest.main()  # Calling from the command line invokes all tests
 https://docs.python.org/3/tutorial/stdlib2.html
 
 ```python
+# The locale module accesses a database of culture specific data formats. 
+# The grouping attribute of locale’s format function provides a direct way of formatting numbers with group separators:
+
+import locale
+
+print(locale.locale_alias)
+print()
+# print(locale.setlocale(locale.LC_ALL, 'english_united-states.437'))
+print(locale.setlocale(locale.LC_ALL, 'en_US.utf8'))
+conv = locale.localeconv()          # get a mapping of conventions
+x = 1234567.8
+print(locale.format("%d", x, grouping=True))
+print(locale.format_string("%s%.*f", (conv['currency_symbol'], conv['frac_digits'], x), grouping=True))
+```
+
+```python
+import threading, zipfile
+
+class AsyncZip(threading.Thread):
+    def __init__(self, infile, outfile):
+        threading.Thread.__init__(self)
+        self.infile = infile
+        self.outfile = outfile
+
+    def run(self):
+        f = zipfile.ZipFile(self.outfile, 'w', zipfile.ZIP_DEFLATED)
+        f.write(self.infile)
+        f.close()
+        print('Finished background zip of:', self.infile)
+
+background = AsyncZip('mydata.txt', 'myarchive.zip')
+background.start()
+print('The main program continues to run in foreground.')
+
+background.join()    # Wait for the background task to finish
+print('Main program waited until background was done.')
+```
+
+```python
+import logging
+logging.debug('Debugging information')
+logging.info('Informational message')
+logging.warning('Warning:config file %s not found', 'server.conf')
+logging.error('Error occurred')
+logging.critical('Critical error -- shutting down')
+```
+
+```python
+# The bisect module contains functions for manipulating sorted lists
+import bisect
+
+scores = [(100, 'perl'), (200, 'tcl'), (400, 'lua'), (500, 'python')]
+bisect.insort(scores, (300, 'ruby'))
+print(scores)
+
+# The heapq module provides functions for implementing heaps based on regular lists. 
+# The lowest valued entry is always kept at position zero. 
+# This is useful for applications which repeatedly access the smallest element 
+# but do not want to run a full list sort 
+from heapq import heapify, heappop, heappush
+data = [1, 3, 5, 7, 9, 2, 4, 6, 8, 0]
+heapify(data)                               # rearrange the list into heap order
+heappush(data, -5)                          # add a new entry
+print([heappop(data) for i in range(3)])    # fetch the three smallest entries
+```
+
+```python
 ```
 
 ## 12. Virtual Environments and Packages
