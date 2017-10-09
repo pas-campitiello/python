@@ -423,7 +423,148 @@ for char in reverse('golf'):
 https://docs.python.org/3/tutorial/stdlib.html
 
 ```python
+import os, glob, sys, re, random, statistics
+
+print()
+# Returns an extensive manual page created from the module's docstrings
+print(help(str))
+
+print()
+# Return the current working directory
+print(os.getcwd())
+
+print()
+# Returns a list of all module functions
+print(dir(os))
+
+print()
+# The glob module provides a function for making file lists from directory wildcard searches
+print(glob.glob('*.py'))
+
+print()
+# Common utility scripts often need to process command line arguments. 
+# These arguments are stored in the sys module’s argv attribute as a list. 
+print(sys.argv)
+
+print()
+# The re module provides regular expression tools for advanced string processing. 
+# For complex matching and manipulation, regular expressions offer succinct, optimized solutions.
+print(re.findall(r'\bf[a-z]*', 'which foot or hand fell fastest'))
+
+# Removing 1 of 2 consecutive words
+print(re.sub(r'(\b[a-z]+) \1', r'\1', 'cat in the the hat'))
+
+print('tea for too'.replace('too', 'two'))
+
+print()
+print("Randome element from list        :", random.choice(['apple', 'pear', 'banana']))
+print("Random list with repetitions     :", [random.choice(range(10)) for _ in range(5)])
+print("Random list without repetitions  :", random.sample(range(10), 5))
+print("Random number                    :", random.random())
+print("Random integer in range(6)       :", random.randrange(6))
+
+print()
+data = [2.75, 1.75, 1.25, 0.25, 0.5, 1.25, 3.5]
+print("mean     : ", statistics.mean(data))
+print("median   : ", statistics.median(data))
+print("variance : ", statistics.variance(data))
 ```
+
+```python
+# There are a number of modules for accessing the internet and processing internet protocols. 
+# Two of the simplest are urllib.request for retrieving data from URLs and smtplib for sending mail 
+
+from urllib.request import urlopen
+with urlopen('http://tycho.usno.navy.mil/cgi-bin/timer.pl') as response:
+     for line in response:
+         line = line.decode('utf-8')         # Decoding the binary data to text
+         if 'EST' in line or 'EDT' in line:  # look for Eastern Time
+             print(line)
+
+
+print()
+# Note that this example needs a mailserver running on localhost, for example Fake SMTP Server
+import smtplib
+server = smtplib.SMTP('localhost:2525')
+server.sendmail('soothsayer@example.org', 'jcaesar@example.org',
+    """To: jcaesar@example.org
+    From: soothsayer@example.org
+    
+    Beware the Ides of March.
+    """)
+server.quit()
+
+
+print()
+# Dates are easily constructed and formatted
+from datetime import date
+now = date.today()
+print("Now: ", now)
+print(now.strftime("%m-%d-%y. %d %b %Y is a %A on the %d day of %B."))
+
+# dates support calendar arithmetic
+birthday = date(1986, 6, 30)
+age = now - birthday
+print(age.days)
+```
+
+```python
+# Common data archiving and compression formats are directly supported 
+# by modules including: zlib, gzip, bz2, lzma, zipfile and tarfile.
+import zlib
+s = b'witch which has which witches wrist watch'
+print(len(s))
+t = zlib.compress(s)
+print(len(t))
+print(zlib.decompress(t))
+print(zlib.crc32(s))
+
+
+print()
+# Python provides a measurement tool that answers those questions immediately.
+# For example, it may be tempting to use the tuple packing and unpacking feature 
+# instead of the traditional approach to swapping arguments. 
+# The timeit module quickly demonstrates a modest performance advantage:
+from timeit import Timer
+print(Timer('t=a; a=b; b=t', 'a=1; b=2').timeit())
+print(Timer('a,b = b,a', 'a=1; b=2').timeit())
+
+
+print()
+# The doctest module provides a tool for scanning a module 
+# and validating tests embedded in a program’s docstrings. 
+# Test construction is as simple as cutting-and-pasting a typical call along with its results into the docstring. 
+
+def average(values):
+    """Computes the arithmetic mean of a list of numbers.
+
+    >>> print(average([20, 30, 70]))
+    40.0
+    """
+    return sum(values) / len(values)
+
+import doctest
+doctest.testmod()   # automatically validate the embedded tests, it prints nothing if test passes
+
+print()
+# The unittest module is not as effortless as the doctest module, 
+# but it allows a more comprehensive set of tests to be maintained in a separate file:
+
+import unittest
+
+class TestStatisticalFunctions(unittest.TestCase):
+
+    def test_average(self):
+        self.assertEqual(average([20, 30, 70]), 40.0)
+        self.assertEqual(round(average([1, 5, 7]), 1), 4.3)
+        with self.assertRaises(ZeroDivisionError):
+            average([])
+        with self.assertRaises(TypeError):
+            average(20, 30, 70)
+
+unittest.main()  # Calling from the command line invokes all tests
+```
+
 
 ## 11. Brief Tour of the Standard Library II
 https://docs.python.org/3/tutorial/stdlib2.html
