@@ -638,7 +638,6 @@ print([heappop(data) for i in range(3)])    # fetch the three smallest entries
 
 ```python
 # The decimal module offers a Decimal datatype for decimal floating point arithmetic.
-
 from decimal import *
 
 print(round(Decimal('0.70') * Decimal('1.05'), 2))
