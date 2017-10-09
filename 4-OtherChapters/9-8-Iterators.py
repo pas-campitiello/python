@@ -14,8 +14,10 @@ class Reverse:
         return self.data[self.index]
 
 rev = Reverse('spam')
-print(rev)
+print(rev.__doc__)
 
+print()
+print(rev)
 iterator = iter(rev)
 print(iterator)
 
