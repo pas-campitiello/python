@@ -94,3 +94,10 @@ python Tests.py
 
 Method 3) Using a [Python IDE](https://www.google.com.au/search?q=python+ide) or an [online IDE](https://www.google.com.au/search?q=python+online+ide).
 
+## Resources
+
+- The official Python tutorial: https://docs.python.org/3/tutorial/index.html 
+
+- Dive Into Python 3 by Mark Pilgrim ([website](http://www.diveintopython3.net/) | [amazon](https://www.amazon.com/Dive-into-Python-Mark-Pilgrim/dp/1430224150/ref=sr_1_1?ie=UTF8&qid=1507601524&sr=8-1&keywords=dive+into+python+3))
+
+- How to Think Like a Computer Scientist - Learning with Python 3  ([website1](http://greenteapress.com/wp/think-python/) | [website2](http://openbookproject.net/thinkcs/python/english3e/) | [amazon](https://www.amazon.com/Think-Python-Like-Computer-Scientist/dp/1491939362/ref=sr_1_1?s=books&ie=UTF8&qid=1507601750&sr=1-1))
