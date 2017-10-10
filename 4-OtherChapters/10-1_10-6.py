@@ -3,6 +3,7 @@ import os, glob, sys, re, random, statistics
 print()
 # Returns an extensive manual page created from the module's docstrings
 print(help(str))
+print(help(5))
 
 print()
 # Return the current working directory
