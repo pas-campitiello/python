@@ -667,8 +667,67 @@ print(Decimal(1) / Decimal(7))
 ## 12. Virtual Environments and Packages
 https://docs.python.org/3/tutorial/venv.html
 
-```python
+You can install, upgrade, and remove packages using a program called pip. By default pip will install packages from the Python Package Index, <https://pypi.python.org/pypi>. You can browse the Python Package Index by going to it in your web browser, or you can use pip’s limited search feature:
+
+```bash
+(tutorial-env) $ sudo apt install pip
+
+...
+
+(tutorial-env) $ pip search astronomy
+skyfield               - Elegant astronomy for Python
+gary                   - Galactic astronomy and gravitational dynamics.
+novas                  - The United States Naval Observatory NOVAS astronomy library
+astroobs               - Provides astronomy ephemeris to plan telescope observations
+PyAstronomy            - A collection of astronomy related tools for Python.
+...
 ```
+
+You can install the latest version of a package by specifying a package’s name:
+
+```bash
+(tutorial-env) $ pip install novas
+Collecting novas
+  Downloading novas-3.1.1.3.tar.gz (136kB)
+Installing collected packages: novas
+  Running setup.py install for novas
+Successfully installed novas-3.1.1.3
+```
+
+You can also **install** a specific version of a package by giving the package name followed by == and the version number:
+
+```bash
+(tutorial-env) $ pip install requests==2.6.0
+Collecting requests==2.6.0
+  Using cached requests-2.6.0-py2.py3-none-any.whl
+Installing collected packages: requests
+Successfully installed requests-2.6.0
+```
+
+You can supply a different version number to get that version, or you can run **pip install --upgrade** to upgrade the package to the latest version:
+
+```bash
+(tutorial-env) $ pip install --upgrade requests
+Collecting requests
+Installing collected packages: requests
+  Found existing installation: requests 2.6.0
+    Uninstalling requests-2.6.0:
+      Successfully uninstalled requests-2.6.0
+Successfully installed requests-2.7.0
+```
+
+**pip uninstall** followed by one or more package names will remove the packages from the virtual environment.  
+**pip show** will display information about a particular package.  
+**pip list** will display all of the packages installed in the virtual environment:
+```bash
+(tutorial-env) $ pip list
+novas (3.1.1.3)
+numpy (1.9.2)
+pip (7.0.3)
+requests (2.7.0)
+setuptools (16.0)
+```
+
 
 ## 99. Other points
 https://www.stavros.io/tutorials/python/
