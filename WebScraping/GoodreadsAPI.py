@@ -31,12 +31,8 @@ def getAuthorBooksData(author_id, key):
     read_data = requests.get(goodreads_search_books_by_author)
     soup = BeautifulSoup(read_data.text, "html.parser")
 
-    print("This URL: " + goodreads_search_books_by_author + " produced:\n")
+    # print("This URL: " + goodreads_search_books_by_author + " produced:\n")
     # print(soup.prettify())
-    
-    #author_id   = soup.find('author')['id']
-    #author_name = soup.find('name').text
-    #author_link = soup.find('link').next_sibling
     
     print("Total number of books: " + soup.find('books')['total'])
     print()
@@ -54,8 +50,8 @@ def getAuthorBooksData(author_id, key):
 
 key = "d6XqV6grF2Rz7Cs0WJesuQ"
 #secret = 
-#author_search_str = "Giovanni Rana"
-author_search_str = sys.argv[1]
+#author_search_str = "Zygmunt Bauman"
+author_search_str    = sys.argv[1]
 
 author_data = getAuthorInfo(author_search_str, key)
 getAuthorBooksData(author_data[0], key)
