@@ -31,14 +31,14 @@ def getAuthorBooksData(author_id, key):
     read_data = requests.get(goodreads_search_books_by_author)
     soup = BeautifulSoup(read_data.text, "html.parser")
 
-    # print("This URL: " + goodreads_search_books_by_author + " produced:\n")
+    print("This URL: " + goodreads_search_books_by_author + " produced:\n")
     # print(soup.prettify())
     
     print("Total number of books: " + soup.find('books')['total'])
     print()
     i=1
     for book in soup.find_all('book'):
-        print("\n---" + str(i) + " -------------------- \n")
+        print("\n--- " + str(i) + " -------------------- \n")
         print("ID: ".ljust(15) + book.find('id').text)
         print("Title: ".ljust(15) + book.find('title').text)
         print("Num pages: ".ljust(15) + book.find('num_pages').text)
