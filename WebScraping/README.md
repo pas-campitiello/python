@@ -1,4 +1,3 @@
 # Web scraping
 
-Collection of web scraping scripts
-
+Collection of scripts for web scraping
