@@ -1,6 +1,8 @@
-# Python code to find the URL from an input string
-# Using the regular expression
-# source: https://www.geeksforgeeks.org/python-check-url-string/#:~:text=To%20find%20the%20URLs%20in,returned%20in%20the%20order%20found.
+# You want to extract from a text in input all the URLs pointing to file based on an extension.
+# For example, you have the HTML of a page and you want to extract all the PDF files referenced in that page
+# which in the background have a URL to a .PDF.
+# Just change the extension of the type of file you want to download --> extensionToDownload.
+
 import re
 import wget
 from urllib.error import HTTPError
@@ -16,14 +18,13 @@ def Find(string):
     #return [x[0] for x in urls]
     return urls
       
-########## Get all the HTML from a text file
-extensionToDownload = ".mp3"
-cleanURLs = []
-
+########## Get the text to parse
 with open('html.txt', 'r') as file:
     inputText = file.read().rstrip()
 
 ########## Get and clean all URLs
+extensionToDownload = ".mp3"
+cleanURLs = []
 rawURLs = Find(inputText)
 print("Found " + str(len(rawURLs)) + " URLs")
 
