@@ -50,7 +50,7 @@ for URLtoDownload in cleanURLsUnique:
     	print("\n\nHTTPError: {0}".format(err))
     i+=1
 
-
+print("\n\n")
 
 
 
