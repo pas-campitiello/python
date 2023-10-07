@@ -1,7 +1,7 @@
 import openai
 
 # Authenticate with your API key
-openai.api_key = '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'
+openai.api_key = 'sk-[XXXXXXXXXXXXXXXXXXXXx]'
 
 # Make a completion request
 response = openai.Completion.create(
